@@ -7,12 +7,12 @@ function selection = selectionTournament(population,NP,V,M)
 % once lost, out of population.
 
 indexes=[];
-objectives = population(:,V+1);
+objectives = population(V+1,:);
 for i = 1:NP
   a =1;
   b = length(objectives);
-  r1 = ceil((b-a).*rand + a);
-  r2 = ceil((b-a).*rand + a);  
+  r1 = (b-a).*rand(1,1) + a;
+  r2 = (b-a).*rand(11,1) + a;  
   
   obj1 = objectives(r1);
   obj2 = objectives(r2);
