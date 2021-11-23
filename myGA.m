@@ -18,9 +18,9 @@ function [population,it] = myGA(f,V,M,lb,ub)
 	%% GENETIC ALGORITHM
 
 	% Generation of the intial population
-	population = initPopulation(N,V);
+	population = initPopulation(N,V); % [10 *2] 
 
-	population = evaluatePopulation(population,f,N,V,M,lb,ub);
+	population = evaluatePopulation(population,f,N,V,M,lb,ub); %10*3
 
 	population = sortPopulation(population,V,M);
 
@@ -36,7 +36,7 @@ function [population,it] = myGA(f,V,M,lb,ub)
 
 		offspring = geneticOperators(parents,f,N,NC,P,V,M,lb,ub);
 
-		population = [ population(:,1:V+M) ; offspring(:,1:V+M) ];
+		population = [ population(:,1:V+M) ; offspring(:,1:V+M) ]; % vertical on eachother 
 
 		population = sortPopulation(population,V,M);
 

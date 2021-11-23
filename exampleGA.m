@@ -8,7 +8,7 @@ clf;
 %		2 : paraboloid with different local and global minima 
 %		3 : ZDT4 function
 %		4 : ZDT6 function
-bm = 1;
+bm = 2;
 
 
 % Define boundaries and other paremeters
@@ -22,7 +22,7 @@ population = myGA(@(x) benchmark(bm,x),V,M,lb,ub);
 
 % Show local and global optima of benchmark 2
 if (bm==2) % Change this to some other number to stop plotting!
-	test_ShowFunction
+	bm_ShowFunction
 elseif (bm>2)
 	% Plot solution
 	hold on
