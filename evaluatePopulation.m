@@ -3,6 +3,7 @@ function evalpopulation = evaluatePopulation(population,f,N,V,M,lb,ub)
 	% evalpopulation, while appending evalueted values at the end
 	objectives = zeros(N,M);
 	
+    %lb && ub
 	% Calculate objectives here
 
 	
