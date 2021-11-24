@@ -18,6 +18,7 @@ function evalpopulation = evaluatePopulation(population,f,N,V,M,lb,ub)
        end 
      end 
 	
+    %lb && ub
 	% Calculate objectives here
 
 	
