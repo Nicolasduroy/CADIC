@@ -3,32 +3,64 @@ function sorted = sortPopulation(unsorted,V,M)
 if (M==1) % Single Objective   %  so we crop the useless ones
 	%sorted = sort(unsorted);
 
-    indexes=[];
-objectives = unsorted(V+1,:);
-% for i = 1:NP
-%   a =1;
-%   b = length(objectives);
-%   r1 = (b-a).*rand + a;
-%   r2 = (b-a).*rand + a;  
-%   
-%   obj1 = objectives(r1);
-%   obj2 = objectives(r2);
-%   objectives([r1,r2],:) = [];
-%   if obj1 < obj2 
-%     indexes = [indexes; r1];
-%   else 
-%     indexes = [indexes; r2];
-%   end 
-% end 
-[]=sort(object
-selection = population(indexes,:);
+   
+    objectives = unsorted(:,V+M);
+
+    [~,indexes]=sort(objectives);
 
     sorted = unsorted(indexes,:);
 	
 else % Multi-objective case : non-domination sorting
     
-    %% Ranking
-	
+    %% Ranking % introducing it here, will be used in cropping. Rank most important, in same rank : crowding distance highest
+	%% check for optimal points : not both objectives can be improved, if one can be improved doesn't matters.
+
+    objectives=sorted(:,(V:V+M));
+    rank= zeros(length(objectives),1);
+    score= zeros(length(objectives),1);
+
+        for k = 1: length(objectives)
+            for j = 1: length(objectives)
+               if objectives(k,1) < objectives(j,1) %% minimize right? want small as possible objectives. 
+                    points = 0;
+                    for q = 1:M 
+                        if objectives(k,q) < objectives(j,q)
+                               points = points +1 ;
+                        end     
+                    end                                         
+                    if  points == M       
+                            score(k)= score(k) +1; % give them points if they are dominant and than give same points same rank
+                    end 
+               end 
+               
+            end 
+        end 
+
+
+N = length(objectives);
+indices = [];
+
+score = score +1 ;  %  so no zero anymore 
+for s = 1: length(score) %  while all(score ==0)== false
+    if all(score == 0) %% loop 
+        break  
+    end 
+    maxi = max(score);
+    for i =  1 : N
+        if score(i) == maxi
+            indices = [indices i];
+            rank(i) = s; % rank 1  is best. 
+        end
+    end
+    score(indices)=(0);      % put to zero if rank is assigned 
+end 
+
+
+%% or build in matlab function
+% x = gamultiobj(f,M);
+        
+    
+    
 
     %% Crowding Distance
 	

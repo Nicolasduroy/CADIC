@@ -17,13 +17,12 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub)
 
               a =1; %randperm??
               b = length(parents)-M;
-              p = ceil((b-a).*rand + a); % random numer between 1  and amount parents
-
-              
+              p = ceil((b-a).*rand + a); % random numer between 1  and amount parent
             
-              x = rand;
+              
 
              children(child,:)= parents(p,(1:V));
+             x = rand;
              children(child,ceil(rand*2)) = x;    % change when V is not 2 anymore. 
             
                
