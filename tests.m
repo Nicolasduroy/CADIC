@@ -1,8 +1,8 @@
 clear all;
 close all;
-N = 5 ;
+N = 10 ;
 V = 2;
-M = 2;
+M = 4;
  population = zeros(N,M);
    
     for i = 1: N
@@ -49,4 +49,31 @@ for s = 1: length(score) %  while all(score ==0)== false
     end
     score(indices)=(0);     
 end 
+ distance = zeros(N,1);
+ ranks = rank(end);
+ l=1;
+ for k = 1:ranks
+     rankindices = [];
+     while(rank(indices(l))==k)
+        rankindices = [rankindices indices(l)];
+        l = l+1;
+        if l>length(indices)
+            break;
+        end
+     end 
+     for m = 1:M
+        unsortedrank = objectives(rankindices,m);
+        [~, indexsort] = sort(unsortedrank);
+        rankindices = rankindices(indexsort);
+        fmin = objectives(rankindices(1),m);
+        fmax = objectives(rankindices(end),m);
+        distance(rankindices(1)) = Inf;
+        distance(rankindices(end)) = Inf;
+        for r = 2:length(rankindices)-1
+            dist = objectives(rankindices(r+1),m)-objectives(rankindices(r-1),m);
+            dist = dist/(fmax-fmin);
+            distance(rankindices(r)) = distance(rankindices(r))+dist; 
+        end
+     end
+ end
     

@@ -13,30 +13,28 @@ if (M==1) % Single Objective   %  so we crop the useless ones
 else % Multi-objective case : non-domination sorting
     
     %% Ranking % introducing it here, will be used in cropping. Rank most important, in same rank : crowding distance highest
-	%% check for optimal points : not both objectives can be improved, if one can be improved doesn't matters.
+	%% check for optimal points : not both objectives can be improved, if one can be improved doesn't matter.
 
-    objectives=sorted(:,(V:V+M));
+    objectives=unsorted(:,(V:V+M));
     rank= zeros(length(objectives),1);
     score= zeros(length(objectives),1);
 
-        for k = 1: length(objectives)
-            for j = 1: length(objectives)
-               if objectives(k,1) < objectives(j,1) %% minimize right? want small as possible objectives. 
-                    points = 0;
-                    for q = 1:M 
-                        if objectives(k,q) < objectives(j,q)
-                               points = points +1 ;
-                        end     
-                    end                                         
-                    if  points == M       
-                            score(k)= score(k) +1; % give them points if they are dominant and than give same points same rank
-                    end 
-               end 
-               
-            end 
+    for k = 1: length(objectives)
+        for j = 1: length(objectives)
+           if objectives(k,1) < objectives(j,1) %% minimize right? want small as possible objectives. 
+                points = 0;
+                for q = 1:M 
+                    if objectives(k,q) < objectives(j,q)
+                           points = points +1 ;
+                    end     
+                end                                         
+                if  points == M       
+                        score(k)= score(k) +1; % give them points if they are dominant and then give same points same rank
+                end 
+           end 
+           
         end 
-
-
+    end 
 N = length(objectives);
 indices = [];
 
@@ -62,10 +60,32 @@ end
 % only compare each of same rank 
 % start with looking for max and min for each rank and give them CD =
 % infinity. 
- % compare resting elements and give them a value based on. 
-% https://www.youtube.com/watch?v=Z8vMa_ohRNY : very clear movie. I assume
-% alle limits for every function get infinity. but that's not super sure. 
+ % compare resting elements and give them a value based on.
+ distance = zeros(N,1);
+ ranks = rank(end);
+ l=1;
+ for k = 1:ranks
+     rankindices = [];
+     while(rank(indices(l))==k)
+        rankindices = [rankindices indices(l)];
+        l = l+1;
+     end 
+     for m = 1:M
+        unsortedrank = objectives(rankindices,m);
+        [~, indexsort] = sort(unsortedrank);
+        rankindices = rankindices(indexsort);
+        fmin = objectives(rankindices(1),m);
+        fmax = objectives(rankindices(end),m);
+        distance(rankindices(1)) = Inf;
+        distance(rankindices(end)) = Inf;
+        for r = 2:length(rankindices)-1
+            dist = objectives(rankindices(r+1),m)-objectives(rankindices(r-1),m);
+            dist = dist/(fmax-fmin);
+            distance(rankindices(r)) = distance(rankindices(r))+dist; 
+        end
+     end
+ end
 
 
-
+    end
 end
