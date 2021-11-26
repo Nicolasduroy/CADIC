@@ -21,7 +21,9 @@ function [population,it] = myGA(f,V,M,lb,ub)
 	population = initPopulation(N,V); % [10 *2] 
 
 	population = evaluatePopulation(population,f,N,V,M,lb,ub); %10*3
+
 	population = sortPopulation(population,V,M);
+
 	% Main loop
 	
 %%%%%%%%%%%%%%%%%%%%%%%% \\ Do not change this part of the code!!
@@ -48,8 +50,12 @@ function [population,it] = myGA(f,V,M,lb,ub)
 		end
 
 		it = it+1;
-
-		runFlag = stopCriterion(it);
+        %% set first time 
+        if it == 2
+            A_old = inf; % if it doens't work with inf, take veryy big number.
+        end 
+		[runFlag,A] = stopCriterion(population,V,M,A_old,it);
+        A_old = A;
 	end
 	
 end

@@ -1,5 +1,6 @@
 % Clear workspace and figures to prevent unwanted behavior
 clear;
+close all;
 clf;
 
 % Choose 1d benchmark function
@@ -8,7 +9,7 @@ clf;
 %		2 : paraboloid with different local and global minima 
 %		3 : ZDT4 function
 %		4 : ZDT6 function
-bm = 3;
+bm = 4;
 
 
 % Define boundaries and other paremeters

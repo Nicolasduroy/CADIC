@@ -2,7 +2,7 @@ function evalpopulation = evaluatePopulation(population,f,N,V,M,lb,ub)
 
 	% Take only the variables from old population and append to
 	% evalpopulation, while appending evalueted values at the end
-    % everything written for V =2, M = 1 
+
     pop_temp = zeros(N,V);
 	 for i = 1:N
          population_temp = [];
