@@ -21,9 +21,7 @@ function [population,it] = myGA(f,V,M,lb,ub)
 	population = initPopulation(N,V); % [10 *2] 
 
 	population = evaluatePopulation(population,f,N,V,M,lb,ub); %10*3
-
 	population = sortPopulation(population,V,M);
-
 	% Main loop
 	
 %%%%%%%%%%%%%%%%%%%%%%%% \\ Do not change this part of the code!!

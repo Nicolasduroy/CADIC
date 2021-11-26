@@ -8,7 +8,7 @@ clf;
 %		2 : paraboloid with different local and global minima 
 %		3 : ZDT4 function
 %		4 : ZDT6 function
-bm = 2;
+bm = 3;
 
 
 % Define boundaries and other paremeters

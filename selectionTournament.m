@@ -9,10 +9,9 @@ function selection = selectionTournament(population,NP,V,M)
 indexes=[];
 objectives = population(:,V+1);
 for i = 1:NP
-  a =1;
-  b = length(objectives);
-  r1 = ceil((b-a).*rand + a);
-  r2 = ceil((b-a).*rand + a);  
+  p = randperm(length(objectives),2);
+  r1 = p(1);
+  r2 = p(2);  
   
   obj1 = objectives(r1);
   obj2 = objectives(r2);

@@ -62,8 +62,9 @@ end
 % infinity. 
  % compare resting elements and give them a value based on.
  distance = zeros(N,1);
- ranks = rank(end);
+ ranks = max(rank);
  l=1;
+ totindices = [];
  for k = 1:ranks
      rankindices = [];
      while(rank(indices(l))==k)
@@ -98,14 +99,19 @@ end
         rankindices = [rankindices indices(l)];
         distances = [distances distance(indices(l))];
         l = l+1;
+        if l>N 
+            break;
+        end
     end 
     [~, sortind] = sort(distances,'descend');
     rankindices = rankindices(sortind);    
     totrankindices = [totrankindices rankindices];
  end
- unsorted = cat(2,unsorted,ranks);
+%  [~,sortdistindices] = sort(totrankindices);
+%  distance = distance(sortrankindices);
+
+ unsorted = cat(2,unsorted,rank);
  unsorted = cat(2,unsorted,distance);
  sorted = unsorted(totrankindices,:);
- 
     end
 end
