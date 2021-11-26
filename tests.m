@@ -1,6 +1,6 @@
 clear all;
 close all;
-N = 15;
+N = 20;
 V = 2;
 M = 2;
  population = zeros(N,M);

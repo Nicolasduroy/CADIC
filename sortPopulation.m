@@ -107,9 +107,6 @@ end
     rankindices = rankindices(sortind);    
     totrankindices = [totrankindices rankindices];
  end
-%  [~,sortdistindices] = sort(totrankindices);
-%  distance = distance(sortrankindices);
-
  unsorted = cat(2,unsorted,rank);
  unsorted = cat(2,unsorted,distance);
  sorted = unsorted(totrankindices,:);
