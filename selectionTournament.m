@@ -24,8 +24,7 @@ for i = 1:NP
   rank_obj1 = objectives(r1,1);
   rank_obj2 = objectives(r2,1);
   crow_obj1 = objectives(r1,2);
-  crow_obj2 = objectives(r2,2);  
-
+  crow_obj2 = objectives(r2,2); 
 
  objectives([r1,r2],:) = 0;
   if rank_obj1 < rank_obj2 

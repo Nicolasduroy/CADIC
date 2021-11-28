@@ -80,7 +80,7 @@ end
         rankindices = rankindices(indexsort);
         fmin = objectives(rankindices(1),m);
         fmax = objectives(rankindices(end),m);
-        distance(rankindices(1)) = Inf;
+        distance(rankindices(1)) = Inf;  
         distance(rankindices(end)) = Inf;
         for r = 2:length(rankindices)-1
             dist = objectives(rankindices(r+1),m)-objectives(rankindices(r-1),m);
