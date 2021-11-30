@@ -33,9 +33,9 @@ for i = 1:NP
     indexes = [indexes; r2];
   elseif rank_obj1 == rank_obj2
     if crow_obj1 < crow_obj2 
-        indexes = [indexes; r1];
-    else 
         indexes = [indexes; r2];
+    else 
+        indexes = [indexes; r1];
     end 
  
    end  
