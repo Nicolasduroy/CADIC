@@ -1,0 +1,27 @@
+
+.global 0 
+
+.param X1=100 X2=0.1
+
+R01 vin vout 'X1'
+C01 vout 0 'X2'
+
+V0 vin 0 pulse( 0 3.3 0 1p 1m)
+
+.option hmax=1u
+.tran 1u 1m data=list
+
+.data list X1 X2
++ 8332.5132 1.6305e-09 
++ 9152.1274 4.8824e-09 
++ 2142.8813 4.8287e-09 
++ 9220.3827 2.9415e-09 
++ 6691.2332 4.2011e-09 
++ 1877.8636 1.5675e-09 
++ 3506.484 2.687e-09 
++ 5921.9337 4.6629e-09 
++ 9617.5615 4.1688e-09 
++ 9683.9968 4.838e-09 
+.enddata
+
+.printfile tran v(vout) file=tranResult
