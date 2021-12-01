@@ -15,7 +15,7 @@ else % Multi-objective case : non-domination sorting
     %% Ranking % introducing it here, will be used in cropping. Rank most important, in same rank : crowding distance highest
 	%% check for optimal points : not both objectives can be improved, if one can be improved doesn't matter.
 
-    objectives=unsorted(:,(V:V+M));
+    objectives=unsorted(:,(V+1:V+M));
     rank= zeros(length(objectives),1);
     score= zeros(length(objectives),1);
 

@@ -5,7 +5,7 @@ eldo_setup; % Setup the eldo licence
 
 % Lower and upper bounds of resistor and capacitor values
 % VAR W1 W2 W2 L1 L2 L3
-lb = [ 1e-6 1e-9	];
+lb = [ 1e-6 1e-9];
 ub = [ 10e-6 5e-9];
 
 %											V=9,M=2
