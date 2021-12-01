@@ -58,32 +58,43 @@ function [flag,a] = stopCriterion(population,V,M,A_previous,it)
 
 
 %% poging 3000 area  (lijkt nog steeds echt brak. beter met variance? 
-             flag = 1;
-          x = population(1:5,V+1);% objective 1  
-          y = population(1:5,V+2); %objective 2 %% on
-          k = boundary(x,y);  
-%           figure 
-%           plot(x,y,'.')
-%           hold on
-%           plot(x(k),y(k));
-
-          l = sort(x);
-          q = sort(y);
-          
-          s = [l(1); x];
-          t = [q(1);y];
-          [~,a] = boundary(s,t);
-
-
-%            %%%%% set stop criteria , if A-Aold = smaller as, stop
-            q = abs(a-A_previous)
-            if abs(a-A_previous) < 0.0000005 %%% need to check for suitable value 
-                 flag = 0 ;
-            end 
+            flag = 1;
+%            a=2;
+%           x = population(1:5,V+1);% objective 1  
+%           y = population(1:5,V+2); %objective 2 %% on
+%           k = boundary(x,y);  
+% %           figure 
+% %           plot(x,y,'.')
+% %           hold on
+% %           plot(x(k),y(k));
+% 
+%           l = sort(x);
+%           q = sort(y);
+%           
+%           s = [l(1); x];
+%           t = [q(1);y];
+%           [~,a] = boundary(s,t);
+% 
+% 
+% %            %%%%% set stop criteria , if A-Aold = smaller as, stop
+%             q = abs(a-A_previous)
+%             if abs(a-A_previous) < 0.0000005 %%% need to check for suitable value 
+%                  flag = 0 ;
+%             end 
 
 %%
-%     if it > 100 % still a time limit to be sure that we don't run indefinitly. 
-%         flag = 0;
-%     end
+%      if it > 100 % still a time limit to be sure that we don't run indefinitly. 
+%          flag = 0;
+%      end
+pareto = population(:,end-1)~=1;
+pareto = sum(pareto);
+if ~pareto
+    cd_index = population(:,end)<Inf;
+    cd = population(cd_index,end);
+    if var(cd)<(10^-4)
+        flag = 0;
+    end
+end
+a=2;
 
 end

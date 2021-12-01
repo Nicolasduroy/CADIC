@@ -39,11 +39,36 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub)
           
 		else
 			% Do mutation
-
-              l = randperm(height(parents),1);
-              %S = randperm(V,1);
-    
-              
+             %S = randperm(V,1);
+             pareto = parents(:,end-1)~=1;
+             pareto = sum(pareto);
+             if ~pareto
+                cd_index = parents(:,end)<Inf;
+                cds = parents(cd_index,end);
+                average = mean(cds);
+                stdev = std(cds);
+                uncrowdedind = (parents(:,end)-average) > 15*stdev;
+                uncrowdedparents = parents(uncrowdedind,:);
+                if isempty(uncrowdedparents)
+                    l = randperm(height(parents),1);
+                    children(child,:)= parents(l,(1:V));
+                    x = rand;
+                    z = randperm(V,1);   
+                    children(child,z) = children(child,z)*(1-(x-1)*0.5);
+                else
+                    l = randperm(height(uncrowdedparents),1);
+                    children(child,:)= uncrowdedparents(l,(1:V));
+                    x = rand;
+                    z = randperm(V,1);   
+                    children(child,z) = children(child,z)*(1-(x-1)*0.2);
+                end
+             else
+                l = randperm(height(parents),1);
+                children(child,:)= parents(l,(1:V));
+                x = rand;
+                z = randperm(V,1);   
+                children(child,z) = children(child,z)*(1-(x-1)*0.2);
+             end
 
              children(child,:)= parents(l,(1:V));
              x = rand;
