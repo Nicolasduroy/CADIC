@@ -16,11 +16,16 @@ else % Multi-objective case : non-domination sorting
 	%% check for optimal points : not both objectives can be improved, if one can be improved doesn't matter.
 
     objectives=unsorted(:,(V+1:V+M));
+<<<<<<< HEAD
     rank= zeros(length(objectives),1);
     score= zeros(length(objectives),1);
+=======
+    rank= zeros(height(objectives),1);
+    score= zeros(height(objectives),1);
+>>>>>>> 7b0138f166a5698fbe74e6a5ec8fc587e0f2ef5a
 
-    for k = 1: length(objectives)
-        for j = 1: length(objectives)
+    for k = 1: height(objectives)
+        for j = 1: height(objectives)
            if objectives(k,1) < objectives(j,1) %% minimize right? want small as possible objectives. 
                 points = 0;
                 for q = 1:M 
@@ -35,11 +40,11 @@ else % Multi-objective case : non-domination sorting
            
         end 
     end 
-N = length(objectives);
+N = height(objectives);
 indices = [];
 
 score = score +1 ;  %  so no zero anymore 
-for s = 1: length(score) %  while all(score ==0)== false
+for s = 1: height(score) %  while all(score ==0)== false
     if all(score == 0) %% loop will always end due to this statement. 
         break  
     end 

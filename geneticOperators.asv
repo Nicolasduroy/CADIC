@@ -48,7 +48,7 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub)
              children(child,:)= parents(l,(1:V));
              x = rand;
              z = randperm(V,1);   
-             %children(child,z) = x;
+%children(child,z) = x;
              children(child,z) = 1-children(child,z);    % only change one element, we can also change more. or choose random how much we change everytime.  
             
                
