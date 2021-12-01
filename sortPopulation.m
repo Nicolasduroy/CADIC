@@ -15,12 +15,12 @@ else % Multi-objective case : non-domination sorting
     %% Ranking % introducing it here, will be used in cropping. Rank most important, in same rank : crowding distance highest
 	%% check for optimal points : not both objectives can be improved, if one can be improved doesn't matter.
 
-    objectives=unsorted(:,(V:V+M));
-    rank= zeros(length(objectives),1);
-    score= zeros(length(objectives),1);
+    objectives=unsorted(:,(V+1:V+M));
+    rank= zeros(height(objectives),1);
+    score= zeros(height(objectives),1);
 
-    for k = 1: length(objectives)
-        for j = 1: length(objectives)
+    for k = 1: height(objectives)
+        for j = 1: height(objectives)
            if objectives(k,1) < objectives(j,1) %% minimize right? want small as possible objectives. 
                 points = 0;
                 for q = 1:M 
@@ -35,11 +35,11 @@ else % Multi-objective case : non-domination sorting
            
         end 
     end 
-N = length(objectives);
+N = height(objectives);
 indices = [];
 
 score = score +1 ;  %  so no zero anymore 
-for s = 1: length(score) %  while all(score ==0)== false
+for s = 1: height(score) %  while all(score ==0)== false
     if all(score == 0) %% loop will always end due to this statement. 
         break  
     end 

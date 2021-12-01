@@ -57,9 +57,9 @@ function [flag,a] = stopCriterion(population,V,M,A_previous,it)
 
 
 
-%% poging 3000 area
+%% poging 3000 area  (lijkt nog steeds echt brak. beter met variance? 
              flag = 1;
-%           x = population(1:5,V+1);% objective 1 
+%           x = population(1:5,V+1);% objective 1  
 %           y = population(1:5,V+2); %objective 2 %% on
 %           k = boundary(x,y);  
 % %           figure 
@@ -73,8 +73,8 @@ function [flag,a] = stopCriterion(population,V,M,A_previous,it)
 %           s = [l(1); x];
 %           t = [q(1);y];
 %           [kk,a] = boundary(s,t);
-
-
+% 
+% 
 % %            %%%%% set stop criteria , if A-Aold = smaller as, stop
 %              q = abs(a -A_previous)
 %             if abs(a -A_previous) < 0.0000005 %%% need to check for suitable value 

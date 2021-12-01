@@ -3,7 +3,8 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub)
 	children = zeros(NC,V);
 	for child = 1:(NC/2)
 		if rand<P
-			% Do recombination %% make 2 childs form 2  parents. 
+			% Do recombination %% make 2 childs form 2  parents. %% also insert
+            % mutation here 
             %crossover = rand; 
          %%% 1 point crossover 
 %             v = randperm(V,1);
@@ -40,12 +41,15 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub)
 			% Do mutation
 
               l = randperm(height(parents),1);
+              %S = randperm(V,1);
+    
               
 
              children(child,:)= parents(l,(1:V));
              x = rand;
              z = randperm(V,1);   
-             children(child,z) = x;    % only change one element, we can also change more. or choose random how much we change everytime.  
+             %children(child,z) = x;
+             children(child,z) = 1-children(child,z);    % only change one element, we can also change more. or choose random how much we change everytime.  
             
                
 
