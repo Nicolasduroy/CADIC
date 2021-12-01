@@ -16,8 +16,11 @@ else % Multi-objective case : non-domination sorting
 	%% check for optimal points : not both objectives can be improved, if one can be improved doesn't matter.
 
     objectives=unsorted(:,(V+1:V+M));
+    rank= zeros(length(objectives),1);
+    score= zeros(length(objectives),1);
     rank= zeros(height(objectives),1);
     score= zeros(height(objectives),1);
+
 
     for k = 1: height(objectives)
         for j = 1: height(objectives)
