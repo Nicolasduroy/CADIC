@@ -23,7 +23,7 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub)
              
             for v = 1:V
                 x =rand;
-                if x <0.3
+                if x <0.5
                     children(child,v)= parents(p(1),v);
                     children(child+1,v)= parents(p(2),v); 
                 else
@@ -48,8 +48,8 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub)
              children(child,:)= parents(l,(1:V));
              x = rand;
              z = randperm(V,1);   
-             %children(child,z) = x;
-             children(child,z) = 1-children(child,z);    % only change one element, we can also change more. or choose random how much we change everytime.  
+             children(child,z) = children(child,z)*(1-(x-1)*0.2);
+             %children(child,z) = 1-children(child,z);    % only change one element, we can also change more. or choose random how much we change everytime.  
             
                
 

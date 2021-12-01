@@ -16,46 +16,64 @@ else % Multi-objective case : non-domination sorting
 	%% check for optimal points : not both objectives can be improved, if one can be improved doesn't matter.
 
     objectives=unsorted(:,(V+1:V+M));
-    rank= zeros(length(objectives),1);
-    score= zeros(length(objectives),1);
     rank= zeros(height(objectives),1);
-    score= zeros(height(objectives),1);
+    indices = [];
 
-
+    ndom_k = zeros(height(objectives),1);
+    S_k = cell(height(objectives),1);
     for k = 1: height(objectives)
+        dom_k = [];
+        ndom = 0;
         for j = 1: height(objectives)
-           if objectives(k,1) < objectives(j,1) %% minimize right? want small as possible objectives. 
-                points = 0;
-                for q = 1:M 
-                    if objectives(k,q) < objectives(j,q)
-                           points = points +1 ;
-                    end     
-                end                                         
-                if  points == M       
-                        score(k)= score(k) +1; % give them points if they are dominant and then give same points same rank
-                end 
-           end 
-           
-        end 
+            if k~=j
+                domin = false;
+                domed = false;
+                for q = 1:M
+                    if objectives(k,q) > objectives(j,q)
+                           domed = true;
+                    elseif objectives(k,q) < objectives(j,q)
+                        domin = true;
+                    end
+                end
+                if xor(domed, domin)
+                    if domed
+                        ndom = ndom + 1;
+                    else
+                        dom_k = [dom_k j];
+                    end
+                end
+            end
+        end
+        ndom_k(k) = ndom;
+        S_k{k} = dom_k;
+        if ndom == 0
+            rank(k) = 1;
+            indices = [indices k];
+        end
     end 
-N = height(objectives);
-indices = [];
-
-score = score +1 ;  %  so no zero anymore 
-for s = 1: height(score) %  while all(score ==0)== false
-    if all(score == 0) %% loop will always end due to this statement. 
-        break  
-    end 
-    maxi = max(score);
-    for i =  1 : N
-        if score(i) == maxi
-            indices = [indices i];
-            rank(i) = s; % rank 1  is best. 
+    front = [];
+    frontcount = 1;
+    for i = 1:height(rank)
+        if rank(i)==frontcount
+            front = [front i];
         end
     end
-    score(indices)=(0);      % put to zero if rank is assigned 
-end 
-
+    while ~isempty(front)
+        frontcount = frontcount + 1;
+        nextfront = [];
+        for m = 1:length(front)
+            dompoints = S_k{front(m)};
+            for l = 1:length(dompoints) %iterate through each dominated point
+                ndom_k(dompoints(l)) = ndom_k(dompoints(l)) - 1;
+                if ndom_k(dompoints(l)) == 0 
+                    nextfront = [nextfront dompoints(l)];
+                    rank(dompoints(l)) = frontcount;
+                    indices = [indices dompoints(l)];
+                end
+            end
+        end
+        front = nextfront;
+    end
     
 
     %% Crowding Distance
@@ -64,6 +82,7 @@ end
 % start with looking for max and min for each rank and give them CD =
 % infinity. 
  % compare resting elements and give them a value based on.
+  N = height(objectives);
  distance = zeros(N,1);
  ranks = max(rank);
  l=1;
