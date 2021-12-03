@@ -83,18 +83,40 @@ function [flag,a] = stopCriterion(population,V,M,A_previous,it)
 %             end 
 
 %%
-%      if it > 100 % still a time limit to be sure that we don't run indefinitly. 
-%          flag = 0;
-%      end
+     if it > 100 % still a time limit to be sure that we don't run indefinitly. 
+         flag = 0;
+     end
+a=0;
 pareto = population(:,end-1)~=1;
 pareto = sum(pareto);
+per = 0;
 if ~pareto
     cd_index = population(:,end)<Inf;
     cd = population(cd_index,end);
-    if var(cd)<(10^-4)
-        flag = 0;
-    end
-end
-a=2;
+    maxi = max(cd);
+    stdev = std(cd);
+    x = population(:,V+1);
+    y = population(:,V+2);
+    lims = (x >= min(x)) & (x <= max(x));
 
+    a = trapz(x(lims),y(lims));
+    dif = abs(a - A_previous);
+%     if dif <0.05
+%     end
+end
+%     if a~=0 
+%         if abs(a-A_previous) < 0.01   
+%             cd_index = population(:,end)<Inf;
+%             cd = population(cd_index,end);
+%             max(cd)
+%             stdev = std(cd)
+%             if max(cd)<stdev*7
+%                 abs(a-A_previous)
+%                 disp('skeet')
+%             end
+%             %smallvarcount = smallvarcount+1;
+%         else
+%             %smallvarcount = 0;
+%         end
+%     end
 end

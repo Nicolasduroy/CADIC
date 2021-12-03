@@ -131,6 +131,7 @@ else % Multi-objective case : non-domination sorting
  end
  unsorted = cat(2,unsorted,rank);
  unsorted = cat(2,unsorted,distance);
+ 
  sorted = unsorted(totrankindices,:);
     end
 end
