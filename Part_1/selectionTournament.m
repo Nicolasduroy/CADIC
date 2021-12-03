@@ -27,18 +27,28 @@ for i = 1:NP
   crow_obj2 = objectives(r2,2); 
 
  objectives([r1,r2],:) = 0;
-  if rank_obj1 < rank_obj2 
-    indexes = [indexes; r1];
-  elseif  rank_obj1 > rank_obj2
-    indexes = [indexes; r2];
-  elseif rank_obj1 == rank_obj2
-    if crow_obj1 < crow_obj2 
+
+  x= rand;
+  if x <0.5
+     if rank_obj1 < rank_obj2 
+         indexes = [indexes; r1];
+     elseif  rank_obj1 > rank_obj2
+         indexes = [indexes; r2]; 
+     elseif rank_obj1 == rank_obj2
+         if crow_obj1 < crow_obj2 
+            indexes = [indexes; r2];
+         else 
+            indexes = [indexes; r1];
+         end 
+     end 
+  else
+     if crow_obj1 < crow_obj2 
         indexes = [indexes; r2];
-    else 
+     else 
         indexes = [indexes; r1];
-    end 
+     end 
  
-   end  
+  end 
 end 
 selection = population(indexes,:);
 

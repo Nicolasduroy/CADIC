@@ -1,4 +1,4 @@
-function [flag,a] = stopCriterion(population,V,M,A_previous,it)
+function [flag,fitness,q,m,crowdmax,max_crowd] = stopCriterion(population,V,M,fitness_previous,it,max_previous)
 % Return :  1 if the GA must continue 
 %           0 if the GA must stop
       
@@ -82,28 +82,67 @@ function [flag,a] = stopCriterion(population,V,M,A_previous,it)
 %                  flag = 0 ;
 %             end 
 
-%%
-     if it > 100 % still a time limit to be sure that we don't run indefinitly. 
-         flag = 0;
-     end
-a=0;
-pareto = population(:,end-1)~=1;
-pareto = sum(pareto);
-per = 0;
-if ~pareto
-    cd_index = population(:,end)<Inf;
-    cd = population(cd_index,end);
-    maxi = max(cd);
-    stdev = std(cd);
-    x = population(:,V+1);
-    y = population(:,V+2);
-    lims = (x >= min(x)) & (x <= max(x));
 
+% %%
+%      if it > 100 % still a time limit to be sure that we don't run indefinitly. 
+%          flag = 0;
+%      end
+% % pareto = population(:,end-1)~=1;
+% % pareto = sum(pareto);
+% % if ~pareto
+% %     cd_index = population(:,end)<Inf;
+% %     cd = population(cd_index,end);
+% %     if var(cd)<(10^-4)
+% %         flag = 0;
+% %     end
+% % end
+% % a=2;
+%% for minimizing both objectives, take fitness function f(x) = obj(x) + obj2(x)
+fitness = 0;
+for i = 1 : height(population)/2
+    for m = 1:M 
+        fitness = fitness + population(i,V+m);
+    end 
+end 
+
+m = mean(abs(fitness_previous-fitness));
+
+q = mean(abs(fitness_previous-fitness))/fitness;
+
+crowd = 0 ;
+for i = 1 : height(population)
+    for m = 1:M 
+        if population(i,end) ~= inf
+            crowd(i) = population(i,end);
+            
+        end 
+    end 
+end 
+crowdmax = max(crowd)/mean(crowd);
+max_crowd = max(crowd);
+% if max_previous == 0
+%     
+%     crowdmax = abs(max_previous -max(crowd))/max(crowd);
+% else 
+%     crowdmax = abs(max_previous -max(crowd))/max_previous;
+% end 
+%     crowdmax = abs(max_previous -max(crowd))/max_previous;
+
+
+ if q < 0.07 && crowdmax < 2
+    flag = 0;
+ end 
+
+
+%             if abs(a-A_previous) < 0.0000005 %%% need to check for suitable value 
+%                  flag = 0 ;
+%             end 
+
+% en dan nog crowdingdistance kunnen we ook nog bij in fitness steken!
     a = trapz(x(lims),y(lims));
     dif = abs(a - A_previous);
 %     if dif <0.05
 %     end
-end
 %     if a~=0 
 %         if abs(a-A_previous) < 0.01   
 %             cd_index = population(:,end)<Inf;
