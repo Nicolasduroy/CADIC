@@ -30,3 +30,7 @@ elseif (bm>2)
 	plot((.28*(bm==4):0.01:1),(bm==4)*(1-(.28*(bm==4):0.01:1).^2)+(bm==3)*(1-sqrt((.28*(bm==4):0.01:1)))) % plot of ZDT functions
 	hold off
 end
+
+
+ %figure 
+ %plot(1:length(q),q)

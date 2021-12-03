@@ -14,7 +14,9 @@ function [population,it] = myGA(f,V,M,lb,ub)
 	P = 0.3;     % probability of recombination
 
 	verbose = true; % (true) plots each iteration
-
+    q = [];
+    gem = [];
+    crowdis = [];
 	%% GENETIC ALGORITHM
 
 	% Generation of the intial population
@@ -52,10 +54,24 @@ function [population,it] = myGA(f,V,M,lb,ub)
 		it = it+1;
         %% set first time 
         if it == 2
-            A_old = inf; % if it doens't work with inf, take veryy big number.
+            fitness = 0;
+            for i = 1 : height(population)
+                for m = 1:M 
+                    fitness = fitness + population(i,V+m);
+                    max_prev = 0;
+                end 
+            end 
+            A_old = fitness + 15;
         end 
-		[runFlag,A] = stopCriterion(population,V,M,A_old,it);
-        A_old = A;
+		[runFlag,A,qnew,m,crowd,max_crowd] = stopCriterion(population,V,M,A_old,it,max_prev);
+
+        q = [q qnew];
+        A_old = [A_old A];
+        gem = [gem m];
+        crowdis = [crowdis crowd];
+        max_prev = max_crowd;
+    
+        
 	end
-	
+   
 end
