@@ -14,10 +14,10 @@ for i = 1:NP
  p = randperm(height(objectives),2);
  r1 = p(1);
  r2 = p(2);  
- while objectives(r1,1)== 0
+ while objectives(r1,1) == 0
      r1 = randperm(height(objectives),1);
  end 
- while objectives(r2,1)== 0
+ while objectives(r2,1) == 0
      r2 = randperm(height(objectives),1);
  end 
  
