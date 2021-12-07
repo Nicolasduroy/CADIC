@@ -129,3 +129,6 @@ objectives=population ;
  unsorted = cat(2,unsorted,rank);
  unsorted = cat(2,unsorted,distance);
  sorted = unsorted(totrankindices,:);
+
+
+p = randperm(10,10);

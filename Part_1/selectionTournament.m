@@ -6,30 +6,21 @@ function selection = selectionTournament(population,NP,V,M)
 %  not the same as tournament, select two random nummers, and chose best (get out of local minima)
 % once lost, out of population.
 
-
+objectives = population(:,V+M+1:end);
+p = randperm(height(objectives),size(population,1));
 indexes=[];
-objectives = population(:,V+1:end);
-for i = 1:NP
-    
- p = randperm(height(objectives),2);
- r1 = p(1);
- r2 = p(2);  
- while objectives(r1,1) == 0
-     r1 = randperm(height(objectives),1);
- end 
- while objectives(r2,1) == 0
-     r2 = randperm(height(objectives),1);
- end 
+
+for i = 1:2:NP*2
+ r1 = p(i);
+ r2 = p(i+1);  
  
   rank_obj1 = objectives(r1,1);
   rank_obj2 = objectives(r2,1);
   crow_obj1 = objectives(r1,2);
   crow_obj2 = objectives(r2,2); 
 
- objectives([r1,r2],:) = 0;
-
   x= rand;
-  if x <0.5
+  if x <0.2
      if rank_obj1 < rank_obj2 
          indexes = [indexes; r1];
      elseif  rank_obj1 > rank_obj2
