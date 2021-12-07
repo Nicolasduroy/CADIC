@@ -3,7 +3,7 @@ clear;
 close all;
 clf;
 
-% Choose 1d benchmark function
+% Choose 1d benchmark function]
 %	Value : function
 %		1 : paraboloid 
 %		2 : paraboloid with different local and global minima 

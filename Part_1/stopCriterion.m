@@ -82,6 +82,7 @@ function [flag,fitness,q,m,crowdmax,max_crowd] = stopCriterion(population,V,M,fi
 %                  flag = 0 ;
 %             end 
 
+
 % %%
 %      if it > 100 % still a time limit to be sure that we don't run indefinitly. 
 %          flag = 0;
@@ -138,5 +139,23 @@ max_crowd = max(crowd);
 %             end 
 
 % en dan nog crowdingdistance kunnen we ook nog bij in fitness steken!
-
+    a = trapz(x(lims),y(lims));
+    dif = abs(a - A_previous);
+%     if dif <0.05
+%     end
+%     if a~=0 
+%         if abs(a-A_previous) < 0.01   
+%             cd_index = population(:,end)<Inf;
+%             cd = population(cd_index,end);
+%             max(cd)
+%             stdev = std(cd)
+%             if max(cd)<stdev*7
+%                 abs(a-A_previous)
+%                 disp('skeet')
+%             end
+%             %smallvarcount = smallvarcount+1;
+%         else
+%             %smallvarcount = 0;
+%         end
+%     end
 end
