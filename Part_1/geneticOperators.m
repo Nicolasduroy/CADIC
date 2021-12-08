@@ -1,6 +1,6 @@
 function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta)
 	children = zeros(NC,V);
-	for child = 1:2:NC %1:(NC/2)
+	for child = 1:NC/2
 		if rand<P
 			% Do recombination %% make 2 childs form 2  parents. %% also insert
             % mutation here 
@@ -18,26 +18,26 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta)
 %             
             %%% uniform cross over 
             
-%              p = randperm(height(parents),2);
-%              
-%             for v = 1:V
-%                 x =rand;
-%                 if x <0.5
-%                     children(child,v)= parents(p(1),v);
-%                     children(child+1,v)= parents(p(2),v); 
-%                 else
-%                     children(child,v)= parents(p(2),v);
-%                     children(child+1,v)= parents(p(1),v);
-%                 end 
-%             end
+             p = randperm(height(parents),2);
+             
+            for v = 1:V
+                x =rand;
+                if x <0.5
+                    children(child,v)= parents(p(1),v);
+                    children(child+1,v)= parents(p(2),v); 
+                else
+                    children(child,v)= parents(p(2),v);
+                    children(child+1,v)= parents(p(1),v);
+                end 
+            end
 
             %Simulated Binary Crossover
-            p = randperm(height(parents),2);
-            for v = 1:V
-                [c1, c2] = districross(parents(p(1),v),parents(p(2),v),eta);
-                children(child,v) = c1;
-                children(child+1,v) = c2;
-            end
+%             p = randperm(height(parents),2);
+%             for v = 1:V
+%                 [c1, c2] = districross(parents(p(1),v),parents(p(2),v),eta);
+%                 children(child,v) = c1;
+%                 children(child+1,v) = c2;
+%             end
             
           
         else

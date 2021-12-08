@@ -19,16 +19,16 @@ lb = (-5+5*(bm>2))*ones(1,V); % -5 for bm 1 and 2; 0 for ZDT functions
 ub = (5-4*(bm>2))*ones(1,V); % 5 for bm 1 and 2; 1 for ZDT functions
 
 
-%res1= myGA(@(x) benchmark(bm,x),V,M,lb,ub,10,4,2,0.3);
-% 
-% N = 10:20:200;
-% NP = 5:20:165;
-% NC = 5:20:165;
-% P = 0.1:0.1:0.9;
-N = 10:2:16;
-NP = 6:4:14;
-NC = 6:2:14;
-P = 0.1:0.3:1;
+res1= myGA(@(x) benchmark(bm,x),V,M,lb,ub,50,25,25,0.5,5);
+
+N = 30:20:200;
+NP = 6:10:166;
+NC = 6:10:166;
+P = 0.1:0.1:0.9;
+% N = 10:2:16;
+% NP = 6:4:14;
+% NC = 6:2:14;
+% P = 0.1:0.3:1;
 ResultsPop = [];
 
 
@@ -37,10 +37,7 @@ for n = 1:length(N)
     for np = 1:length(NP)
         for nc = 1:length(NC)
             for p = 1:length(P)
-                if NP(np)<=N(n) && NP(np)<=NC(nc)  
-                    np 
-                    nc 
-                    p
+                if NP(np)<=N(n)/2 && NP(np)<=NC(nc) && NC(nc)<=N(n)/2
                     tic
                     [res.pop, res.it] = myGA(@(x) benchmark(bm,x),V,M,lb,ub,N(n),NP(np),NC(nc),P(p),0.25);
                     time=toc
