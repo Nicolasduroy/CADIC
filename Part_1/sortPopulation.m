@@ -15,10 +15,10 @@ else % Multi-objective case : non-domination sorting
     %% Ranking % introducing it here, will be used in cropping. Rank most important, in same rank : crowding distance highest
 	%% check for optimal points : not both objectives can be improved, if one can be improved doesn't matter.
 
-    objectives=unsorted(:,(V+1:V+M));
-    rank= zeros(height(objectives),1);
-    indices = [];
-
+    objectives = unsorted(:,(V+1:V+M));
+    rank = zeros(height(objectives),1);
+    indices = zeros(height(objectives),1);
+    ind_indices = 1;
     ndom_k = zeros(height(objectives),1);
     S_k = cell(height(objectives),1);
     for k = 1: height(objectives)
@@ -30,9 +30,12 @@ else % Multi-objective case : non-domination sorting
                 domed = false;
                 for q = 1:M
                     if objectives(k,q) > objectives(j,q)
-                           domed = true;
+                        domed = true;
                     elseif objectives(k,q) < objectives(j,q)
                         domin = true;
+                    end
+                    if domed && domin
+                        break;
                     end
                 end
                 if xor(domed, domin)
@@ -48,7 +51,8 @@ else % Multi-objective case : non-domination sorting
         S_k{k} = dom_k;
         if ndom == 0
             rank(k) = 1;
-            indices = [indices k];
+            indices(ind_indices) = k;
+            ind_indices = ind_indices+1;
         end
     end 
     front = [];
@@ -65,10 +69,12 @@ else % Multi-objective case : non-domination sorting
             dompoints = S_k{front(m)};
             for l = 1:length(dompoints) %iterate through each dominated point
                 ndom_k(dompoints(l)) = ndom_k(dompoints(l)) - 1;
-                if ndom_k(dompoints(l)) == 0 
+                if ndom_k(dompoints(l)) == 0
                     nextfront = [nextfront dompoints(l)];
                     rank(dompoints(l)) = frontcount;
-                    indices = [indices dompoints(l)];
+                    indices(ind_indices) = dompoints(l);
+                    ind_indices = ind_indices+1;
+                    %indices = [indices dompoints(l)];
                 end
             end
         end
@@ -86,7 +92,6 @@ else % Multi-objective case : non-domination sorting
  distance = zeros(N,1);
  ranks = max(rank);
  l=1;
- totindices = [];
  for k = 1:ranks
      rankindices = [];
      while(rank(indices(l))==k)
@@ -112,6 +117,8 @@ else % Multi-objective case : non-domination sorting
      end
  end
 
+%  totrankindices = zeros(height(objectives),1);
+%  ind_totrankindices = 1;
  totrankindices = [];
  l=1;
  for y = 1:ranks
@@ -128,6 +135,8 @@ else % Multi-objective case : non-domination sorting
     [~, sortind] = sort(distances,'descend');
     rankindices = rankindices(sortind);    
     totrankindices = [totrankindices rankindices];
+%     totrankindices(ind_totrankindices:length(rankindices)) = rankindices;
+%     ind_totrankindices = ind_totrankindices+length(rankindices);
  end
  unsorted = cat(2,unsorted,rank);
  unsorted = cat(2,unsorted,distance);
