@@ -1,0 +1,4043 @@
+  Run on vierre64.esat.kuleuven.be (Linux 4.18.0-348.2.1.el8_5.x86_64)
+
+-----------| System Information |---------------
+
+*** User  : r0483515
+*** OS    : Rocky Linux release 8.5 (Green Obsidian) [VCO = aol]
+*** CPU   :
+    AMD EPYC Processor
+    Number of physical processors     : 4
+    Hyper-Threading Technology        : disabled
+    Number of cpu cores               : 16
+    Number of logical processors      : 16
+*** Freq  : 2994.374MHz
+*** Cache : 512 KB
+*** MEM   : 65921092 kB
+*** Date  : Wed Dec  8 16:28:57 2021
+
+*** Eldo VERSION : ELDO 2020.3 update1 (64 bits) Thu Aug 20 15:38:08 GMT 2020
+
+/esat/micas-data/software/Mentor/ams_2020.3/aol/bin/eldo_64.exe -i interfaceEldo/differential_pair/ac
+
+
+***>  8-Dec-2021 16:28:57 - STARTING PARSING PHASE ...
+
+***** PRE-PROCESSING ...
+1******* 8-Dec-21 *******  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  *******16:28:57******
+
+0.option compat
+
+0****     INPUT LISTING                                               
+
+0***********************************************************************
+    2  .LIB model
+    3  
+    4  ** INCLUDING LIBRARY /users/students/r0483515/CADIC_FOURRRRR/CADIC/Part_2/interfaceEldo/differential_pair/model
+    1  *  T58F SPICE BSIM3 VERSION 3.1 PARAMETERS
+    2  * 
+    3  * SPICE 3f5 Level 8, Star-HSPICE Level 49, UTMOST Level 8
+    4  * 
+    5  * DATE: Oct 31/05
+    6  * LOT: T58F                  WAF: 9005
+    7  * Temperature_parameters=Default
+    8  * http://www.ee.iitm.ac.in/~nagendra/cadinfo/tsmc018.lib
+    9  
+   10  .MODEL CMOSN NMOS (                                LEVEL   = 49
+   11  +VERSION = 3.1            TNOM    = 27             TOX     = 4.1E-9
+   12  +XJ      = 1E-7           NCH     = 2.3549E17      VTH0    = 0.3662473
+   13  +K1      = 0.5864999      K2      = 1.127266E-3    K3      = 1E-3
+   14  +K3B     = 0.0294061      W0      = 1E-7           NLX     = 1.630684E-7
+   15  +DVT0W   = 0              DVT1W   = 0              DVT2W   = 0
+   16  +DVT0    = 1.2064649      DVT1    = 0.4215486      DVT2    = 0.0197749
+   17  +U0      = 273.8094484    UA      = -1.40499E-9    UB      = 2.408323E-18
+   18  +UC      = 6.504826E-11   VSAT    = 1.355009E5     A0      = 2
+   19  +AGS     = 0.4449958      B0      = 1.901075E-7    B1      = 4.99995E-6
+   20  +KETA    = -0.0164863     A1      = 3.868769E-4    A2      = 0.4640272
+   21  +RDSW    = 123.3376355    PRWG    = 0.5            PRWB    = -0.197728
+   22  +WR      = 1              WINT    = 0              LINT    = 1.690044E-8
+   23  +XL      = 0              XW      = -1E-8          DWG     = -4.728719E-9
+   24  +DWB     = -2.452411E-9   VOFF    = -0.0948017     NFACTOR = 2.1860065
+   25  +CIT     = 0              CDSC    = 2.4E-4         CDSCD   = 0
+   26  +CDSCB   = 0              ETA0    = 2.230928E-3    ETAB    = 6.028975E-5
+   27  +DSUB    = 0.0145467      PCLM    = 1.3822069      PDIBLC1 = 0.1762787
+   28  +PDIBLC2 = 1.66653E-3     PDIBLCB = -0.1           DROUT   = 0.7694691
+   29  +PSCBE1  = 8.91287E9      PSCBE2  = 7.349607E-9    PVAG    = 1.685917E-3
+   30  +DELTA   = 0.01           RSH     = 6.7            MOBMOD  = 1
+   31  +PRT     = 0              UTE     = -1.5           KT1     = -0.11
+   32  +KT1L    = 0              KT2     = 0.022          UA1     = 4.31E-9
+   33  +UB1     = -7.61E-18      UC1     = -5.6E-11       AT      = 3.3E4
+   34  +WL      = 0              WLN     = 1              WW      = 0
+   35  +WWN     = 1              WWL     = 0              LL      = 0
+   36  +LLN     = 1              LW      = 0              LWN     = 1
+   37  +LWL     = 0              CAPMOD  = 2              XPART   = 0.5
+   38  +CGDO    = 8.23E-10       CGSO    = 8.23E-10       CGBO    = 1E-12
+   39  +CJ      = 9.466429E-4    PB      = 0.8            MJ      = 0.3820266
+   40  +CJSW    = 2.608154E-10   PBSW    = 0.8            MJSW    = 0.102322
+   41  +CJSWG   = 3.3E-10        PBSWG   = 0.8            MJSWG   = 0.102322
+   42  +CF      = 0              PVTH0   = -2.199373E-3   PRDSW   = -0.9368961
+   43  +PK2     = 1.593254E-3    WKETA   = -2.880976E-3   LKETA   = 7.165078E-3
+   44  +PU0     = 6.777519       PUA     = 5.505418E-12   PUB     = 8.84133E-25
+   45  +PVSAT   = 2.006286E3     PETA0   = 1.003159E-4    PKETA   = -6.759277E-3
+   46  +NOIMOD=2.0E+00		NOIA=1.3182567385564E+19
+   47  +NOIB=144543.977074592 NOIC=-1.24515784572817E-12	EF=0.92 EM=41000000 )
+   48  *
+   49  *
+   50  * flicker noise parameters above added manually from some other process
+   51  * 
+   52  .MODEL CMOSP PMOS (                                LEVEL   = 49
+   53  +VERSION = 3.1            TNOM    = 27             TOX     = 4.1E-9
+   54  +XJ      = 1E-7           NCH     = 4.1589E17      VTH0    = -0.3906012
+   55  +K1      = 0.5341312      K2      = 0.0395326      K3      = 0
+   56  +K3B     = 7.4916211      W0      = 1E-6           NLX     = 1.194072E-7
+   57  +DVT0W   = 0              DVT1W   = 0              DVT2W   = 0
+   58  +DVT0    = 0.5060555      DVT1    = 0.2423835      DVT2    = 0.1
+   59  +U0      = 115.6894042    UA      = 1.573746E-9    UB      = 1.874308E-21
+   60  +UC      = -1E-10         VSAT    = 1.130982E5     A0      = 1.9976555
+   61  +AGS     = 0.4186945      B0      = 1.949178E-7    B1      = 6.422908E-7
+   62  +KETA    = 0.0166345      A1      = 0.4749146      A2      = 0.300003
+   63  +RDSW    = 198.321294     PRWG    = 0.5            PRWB    = -0.4986647
+   64  +WR      = 1              WINT    = 0              LINT    = 2.94454E-8
+   65  +XL      = 0              XW      = -1E-8          DWG     = -2.798724E-8
+   66  +DWB     = -4.83797E-10   VOFF    = -0.095236      NFACTOR = 2
+   67  +CIT     = 0              CDSC    = 2.4E-4         CDSCD   = 0
+   68  +CDSCB   = 0              ETA0    = 1.035504E-3    ETAB    = -4.358398E-4
+   69  +DSUB    = 1.816555E-3    PCLM    = 1.3299898      PDIBLC1 = 1.766563E-3
+   70  +PDIBLC2 = 7.728395E-7    PDIBLCB = -1E-3          DROUT   = 1.011891E-3
+   71  +PSCBE1  = 4.872184E10    PSCBE2  = 5E-10          PVAG    = 0.0209921
+   72  +DELTA   = 0.01           RSH     = 7.7            MOBMOD  = 1
+   73  +PRT     = 0              UTE     = -1.5           KT1     = -0.11
+   74  +KT1L    = 0              KT2     = 0.022          UA1     = 4.31E-9
+   75  +UB1     = -7.61E-18      UC1     = -5.6E-11       AT      = 3.3E4
+   76  +WL      = 0              WLN     = 1              WW      = 0
+   77  +WWN     = 1              WWL     = 0              LL      = 0
+   78  +LLN     = 1              LW      = 0              LWN     = 1
+   79  +LWL     = 0              CAPMOD  = 2              XPART   = 0.5
+   80  +CGDO    = 6.35E-10       CGSO    = 6.35E-10       CGBO    = 1E-12
+   81  +CJ      = 1.144521E-3    PB      = 0.8468686      MJ      = 0.4099522
+   82  +CJSW    = 2.490749E-10   PBSW    = 0.8769118      MJSW    = 0.3478565
+   83  +CJSWG   = 4.22E-10       PBSWG   = 0.8769118      MJSWG   = 0.3478565
+   84  +CF      = 0              PVTH0   = 2.302018E-3    PRDSW   = 9.0575312
+   85  +PK2     = 1.821914E-3    WKETA   = 0.0222457      LKETA   = -1.495872E-3
+   86  +PU0     = -1.5580645     PUA     = -6.36889E-11   PUB     = 1E-21
+   87  +PVSAT   = 49.8420442     PETA0   = 2.827793E-5    PKETA   = -2.536564E-3 
+   88  + NOIMOD=2.0E+00		NOIA=3.57456993317604E+18		NOIB=2500
+   89  + NOIC=2.61260020285845E-11	EF=1.1388				EM=41000000 )
+   90  *
+   91  *
+   92  * flicker noise parameters above added manually from some other process
+   93  * 
+   94  
+    4  ** END OF LIBRARY /users/students/r0483515/CADIC_FOURRRRR/CADIC/Part_2/interfaceEldo/differential_pair/model
+    4  .GLOBAL 0 
+    5  
+    6  .PARAM XWM=0.000003 XLM=0.000001 XWIN=0.000003 XLIN=0.000000360 XWB=0.000002 XLB=0.000000180
+    7  
+    8  
+    9  C01 VOUT 0 5P
+   10  
+   11  M1 N1 N1 VDD VDD CMOSP W='XWM' L='XLM'
+   12  
+   13  M2 VOUT N1 VDD VDD CMOSP W='XWM' L='XLM'
+   14  
+   15  M3 N1 VINP N2 N2 CMOSN W='XWIN' L='XLIN'
+   16  M4 VOUT VINN N2 N2 CMOSN W='XWIN' L='XLIN'  
+   17  
+   18  M5 N2 VB 0 0 CMOSN W='XWB' L='XLB'
+   19  
+   20  
+   21  V0 vinn 0 ac 1 dc 0.7
+   22  V1 vinp 0 ac 1 dc 0.7
+   23  V2 vdd 0 dc 1.8
+   24  V3 vb 0 dc 0.7
+   25  
+   26  .AC dec 10 100 1G data=list
+   27  
+   28  .DATA list XWM XLM XWin XLin XWb XLb
+   29  + 2.3951e-05 7.779e-06 4.3816e-05 6.2448e-06 1.0878e-05 6.5204e-06 
+   30  + 2.7948e-05 8.6123e-06 2.4518e-05 9.2105e-06 1.0878e-05 6.5204e-06 
+   31  + 1.0548e-05 7.6146e-06 4.4344e-05 5.149e-06 2.4e-07 8.1432e-06 
+   32  + 3.5677e-05 8.474e-06 2.4518e-05 6.8332e-06 1.0878e-05 6.5204e-06 
+   33  + 3.3844e-05 1.8e-07 2.4e-07 5.2536e-06 2.4e-07 3.9181e-06 
+   34  + 5.6027e-05 7.5474e-06 4.9054e-05 2.4731e-06 5.0282e-06 3.9566e-06 
+   35  + 3.2434e-05 1.0021e-05 2.4518e-05 6.2448e-06 1.0878e-05 7.4193e-06 
+   36  + 2.1491e-05 8.6123e-06 4.6043e-05 9.2105e-06 1.4451e-05 8.0047e-06 
+   37  + 2.7948e-05 7.779e-06 2.5005e-05 6.2448e-06 1.0878e-05 6.5204e-06 
+   38  + 2.3951e-05 1.3219e-06 4.6394e-05 6.4175e-06 5.0807e-06 9.1009e-06 
+   39  + 1.9181e-05 1.1985e-06 1.9025e-05 6.1279e-06 1.2246e-05 6.2971e-06 
+   40  + 2.4e-07 1.8e-07 2.4518e-05 1.8e-07 2.4e-07 1.8e-07 
+   41  + 2.022e-05 1.8e-07 2.4e-07 9.2105e-06 1.0878e-05 6.5204e-06 
+   42  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   43  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   44  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   45  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   46  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   47  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   48  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   49  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   50  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   51  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   52  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   53  + 2.4e-07 1.8e-07 2.4e-07 1.8e-07 2.4e-07 1.8e-07 
+   54  .ENDDATA
+   55  
+   56  .PRINTFILE ac v(vout) file=acResult
+   57  .END
+
+End of file 
+
+
+***** 0  error(s). 
+***** 0  warning(s). 
+
+
+***>  8-Dec-2021 16:28:57 - PARSING completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+***>  8-Dec-2021 16:28:57 - STARTING ELABORATION PHASE ...
+
+----------------| Design Summary |-----------------
+10 elements
+7 nodes 
+4 sources
+
+Detail about objects and nodes found in the design:
+Number of nodes                     7
+Number of resistors                 0
+Number of capacitors                1
+Number of inductors                 0
+Number of voltage sources           4
+Number of current sources           0
+Number of dependent sources         0
+Number of diodes                    0
+Number of BJT                       0
+Number of JFET                      0
+Number of MOS                       5
+Number of SWITCHES                  0
+Number of transmission lines        0
+Total number of elements            10
+Repartition per level of MOS
+  BSIM3V3 5
+---------------------------------------------------
+
+***** 0  error(s). 
+***** 0  warning(s). 
+
+
+------------| Elaboration Information |------------
+***> Memory:
+Peak memory usage (MB): 55
+Virtual memory usage (MB): 451
+
+***> Inputs:
+4 input signals
+---------------------------------------------------
+Note 108: Acquiring license Analog Simulator Kernel (eldokernel)
+
+
+0************************************************************************************************************************
+
+
+run number 1 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 MODELS PARAMETERS                                    TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+
+ DEVICE          MOS
+ MODEL: CMOSN
+ TYPE            N
+ LEVEL 53 : Bsim3v3 version 3.1
+ LIBRARY : /users/students/r0483515/CADIC_FOURRRRR/CADIC/Part_2/interfaceEldo/differential_pair/model
+
+  names    values    units     names    values    units     names    values    units   
+  -----    ------    -----     -----    ------    -----     -----    ------    -----   
+VER     = 3.1000E+00 -       MOBMOD  = 1          -       CAPMOD  = 2          -      
+VFBFLAG = 0          -       NQSMOD  = 0          -       NOIMOD  = 2          -      
+DERIV   = 1          -       BINFLAG = 0          -       PARAMCHK= 0          -      
+IIMOD   = 0          -       FNLEV   = 0          -       
+
+ * Threshold voltage related model parameters *
+   ------------------------------------------  
+VTH0    = 3.6625E-01 V       DELVTO  = 0.0        V       K1      = 5.8650E-01 V^1/2  
+K2      = 1.1273E-03 -       NCH     = 2.3549E+17 At/cm^3 K3      = 1.0000E-03 -      
+K3B     = 2.9406E-02 1/V     DVT0    = 1.2065E+00 -       DVT1    = 4.2155E-01 -      
+DVT2    = 1.9775E-02 1/V     DVT0W   = 0.0        -       DVT1W   = 0.0        1/m    
+DVT2W   = 0.0        1/V     DSUB    = 1.4547E-02 -       ETA0    = 2.2309E-03 -      
+ETAB    = 6.0290E-05 1/V     
+
+ * Subthreshold related parameters *
+   -------------------------------  
+NFACTOR = 2.1860E+00 -       CDSC    = 2.4000E-04 F/m^2   CDSCB   = 0.0        F/Vm^2 
+CDSCD   = 0.0        F/Vm^2  VOFF    =-9.4802E-02 V       CIT     = 0.0        F/m^2  
+
+ * Mobility related model parameters *
+   ---------------------------------  
+UA      =-1.4050E-09 m/V     UB      = 2.4083E-18 (m/V)^2 UC      = 6.5048E-11 m/V^2  
+U0      = 2.7381E-02 unit1   MULUO   = 1.0000E+00 -       
+
+ * Saturation related parameters *
+   -----------------------------  
+PCLM    = 1.3822E+00 -       KETA    =-1.6486E-02 1/V     DELTA   = 1.0000E-02 V      
+A0      = 2.0000E+00 -       A1      = 3.8688E-04 1/V     A2      = 4.6403E-01 -      
+B0      = 1.9011E-07 m       B1      = 5.0000E-06 m       PVAG    = 1.6859E-03 -      
+PDIBLC1 = 1.7628E-01 -       PDIBLC2 = 1.6665E-03 -       PDIBLCB =-1.0000E-01 1/V    
+DROUT   = 7.6947E-01 -       VSAT    = 1.3550E+05 m/s     PSCBE1  = 8.9129E+09 V/m    
+PSCBE2  = 7.3496E-09 m/V     PRWB    =-1.9773E-01 V^-1/2  PRWG    = 5.0000E-01 1/V    
+RDSW    = 1.2334E+02 Ohm.um  AGS     = 4.4500E-01 1/V     
+
+ * Geometry modulation related parameters *
+   --------------------------------------  
+LREF    = 0.0        m       WREF    = 0.0        m       LINT    = 1.6900E-08 m      
+DLC     = 1.6900E-08 m       LL      = 0.0        m       LW      = 0.0        m      
+LWL     = 0.0        m       LLN     = 1.0000E+00 -       LWN     = 1.0000E+00 -      
+WINT    = 0.0        m       DWC     = 0.0        m       WL      = 0.0        m      
+WW      = 0.0        m       WWL     = 0.0        m       WLN     = 1.0000E+00 -      
+WWN     = 1.0000E+00 -       WR      = 1.0000E+00 -       W0      = 1.0000E-07 m      
+DWG     =-4.7287E-09 m/V     DWB     =-2.4524E-09 m/V^1/2 
+
+ * Temperature effect parameters *
+   -----------------------------  
+UPDATEPHI= 0          -       AT      = 3.3000E+04 m/sec   UTE     =-1.5000E+00 -      
+KT1     =-1.1000E-01 V       KT2     = 2.2000E-02 -       KT1L    = 0.0        mV     
+UA1     = 4.3100E-09 m/V     UB1     =-7.6100E-18 (m/V)^2 UC1     =-5.6000E-11 m/V^2  
+PRT     = 0.0        Ohm.um  
+
+ * Overlap capacitance related and dynamic model parameters *
+   --------------------------------------------------------  
+XPART   = 5.0000E-01 -       CLC     = 1.0000E-07 m       CLE     = 6.0000E-01 -      
+CGDO    = 8.2300E-10 F/m     CGDL    = 0.0        F/m     CGSO    = 8.2300E-10 F/m    
+CGSL    = 0.0        F/m     CGBO    = 1.0000E-12 F/m     CKAPPA  = 6.0000E-01 V      
+CF      = 0.0        F/m     ELM     = 5.0000E+00 -       VFBCV   =-1.0000E+00 -      
+
+ * Substrate current related model parameters *
+   ----------------------------------------------
+ALPHA0  = 0.0        m/V     BETA0   = 3.0000E+01 V       
+
+ * Process and parameters extraction related model parameters *
+   ----------------------------------------------------------  
+TOX     = 4.1000E-09 m       DTOXCV  = 0.0        m       NGATE   = 0.0        At/cm^3
+NLX     = 1.6307E-07 m       XL      = 0.0        m       XW      =-1.0000E-08 m      
+ND      = 1.0000E+20 At/cm^3 
+
+ * Noise effect related model parameters *
+   -------------------------------------  
+THMLEV  = 0          -       FLKLEV  = 0          -       AF      = 1.0000E+00 -      
+KF      = 1.0000E-09 -       EF      = 9.2000E-01 -       NSTAR   = 2.0000E+14 -      
+FLKFLAG = 0.0        -       NOIFLAG = 0.0        -       NOIA    = 1.3183E+19 unit2  
+NOIB    = 1.4454E+05 1/V     NOIC    =-1.2452E-12 unit3   EM      = 4.1000E+07 V/m    
+WPEMOD  = 0.0        -       SCREF   = 1.0000E-06 m       KVTH0WE = 0.0        V      
+K2WE    = 0.0        -       KU0WE   = 0.0        -       WEB     = 0.0        -      
+WEC     = 0.0        -       GAMMA   = 6.6667E-01 -       
+
+ * Binning Parameters *
+   -------------------  
+BINUNIT = 1.0000E+00 -       
+* Display only non null Binning Parameters *
+PK2     = 1.5933E-03 -       PU0     = 6.7775E+00 -       PUA     = 5.5054E-12 -      
+PUB     = 8.8413E-25 -       PVSAT   = 2.0063E+03 -       LKETA   = 7.1651E-03 -      
+WKETA   =-2.8810E-03 -       PKETA   =-6.7593E-03 -       PRDSW   =-9.3690E-01 -      
+PETA0   = 1.0032E-04 -       PVTH0   =-2.1994E-03 -       
+   ------------------------------------------------------------------------  
+
+ *** Common extrinsic model parameters ***
+OPTACM  = 1          -       GDSNOI  = 1.0000E+00 -       ACM     = 0          -      
+ALEV    = 0          -       RLEV    = 0          -       
+ * Access resistances related parameters *
+RD      = 0.0        Ohm     RS      = 0.0        Ohm     RSH     = 6.7000E+00 Ohm/Sq.
+RDC     = 0.0        Ohm     RSC     = 0.0        Ohm     
+ * Geometry related parameters *
+LD      = 1.6900E-08 m       WD      = 0.0        m       DL      = 0.0        m      
+DW      = 0.0        m       LDIF    = 0.0        m       HDIF    = 0.0        m      
+WMLT    = 1.0000E+00 -       LMLT    = 1.0000E+00 -       DEL     = 0.0        m      
+XJ      = 1.0000E-07 m       
+ * Static bulk-diode related parameters *
+DIOLEV  = 2          -       JS      = 0.0        A/m^2   JSW     = 0.0        A/m    
+IS      = 0.0        A       NJ      = 1.0000E+00 -       NDS     = 1.0000E+00 -      
+VNDS    =-1.0000E+00 V       VDLIN   = 5.0000E-01 -       
+ * Dynamic bulk-diode related parameters *
+DCAPLEV = 3          -       CJGATE  = 0.0                CBD     = 0.0        F      
+CBS     = 0.0        F       CJ      = 9.4493E-04 F/m^2   CJSW    = 2.6069E-10 F/m    
+FC      = 0.0        -       MJ      = 3.8203E-01 -       MJSW    = 1.0232E-01 -      
+TT      = 0.0        s       PB      = 8.0315E-01 V       PBSW    = 8.0315E-01 V      
+ * Temperature related Parameters 
+EG      = 1.1100E+00 eV      GAP1    = 7.0200E-04 eV/degK GAP2    = 1.1080E+03 degK   
+TNOM    = 2.7000E+01 degC    TLEV    = 0          -       TLEVC   = 0          -      
+TLEVI   = 3          -       XTI     = 0.0        -       
+ * Temperature Access Resistance related parameters * TLEVR = 1 
+TRD1    = 0.0        1/degK  TRS1    = 0.0        1/degK  TRSH1   = 0.0        1/degK 
+TRD2    = 0.0        unit4   TRS2    = 0.0        unit4   TRSH2   = 0.0        unit4  
+
+unit1 represents m^2/V/sec
+unit2 represents V^-1.m^-2
+unit3 represents V^-1.m^2
+unit4 represents 1/degK^2
+
+ DEVICE          MOS
+ MODEL: CMOSP
+ TYPE            P
+ LEVEL 53 : Bsim3v3 version 3.1
+ LIBRARY : /users/students/r0483515/CADIC_FOURRRRR/CADIC/Part_2/interfaceEldo/differential_pair/model
+
+  names    values    units     names    values    units     names    values    units   
+  -----    ------    -----     -----    ------    -----     -----    ------    -----   
+VER     = 3.1000E+00 -       MOBMOD  = 1          -       CAPMOD  = 2          -      
+VFBFLAG = 0          -       NQSMOD  = 0          -       NOIMOD  = 2          -      
+DERIV   = 1          -       BINFLAG = 0          -       PARAMCHK= 0          -      
+IIMOD   = 0          -       FNLEV   = 0          -       
+
+ * Threshold voltage related model parameters *
+   ------------------------------------------  
+VTH0    =-3.9060E-01 V       DELVTO  = 0.0        V       K1      = 5.3413E-01 V^1/2  
+K2      = 3.9533E-02 -       NCH     = 4.1589E+17 At/cm^3 K3      = 0.0        -      
+K3B     = 7.4916E+00 1/V     DVT0    = 5.0606E-01 -       DVT1    = 2.4238E-01 -      
+DVT2    = 1.0000E-01 1/V     DVT0W   = 0.0        -       DVT1W   = 0.0        1/m    
+DVT2W   = 0.0        1/V     DSUB    = 1.8166E-03 -       ETA0    = 1.0355E-03 -      
+ETAB    =-4.3584E-04 1/V     
+
+ * Subthreshold related parameters *
+   -------------------------------  
+NFACTOR = 2.0000E+00 -       CDSC    = 2.4000E-04 F/m^2   CDSCB   = 0.0        F/Vm^2 
+CDSCD   = 0.0        F/Vm^2  VOFF    =-9.5236E-02 V       CIT     = 0.0        F/m^2  
+
+ * Mobility related model parameters *
+   ---------------------------------  
+UA      = 1.5737E-09 m/V     UB      = 1.8743E-21 (m/V)^2 UC      =-1.0000E-10 m/V^2  
+U0      = 1.1569E-02 unit1   MULUO   = 1.0000E+00 -       
+
+ * Saturation related parameters *
+   -----------------------------  
+PCLM    = 1.3300E+00 -       KETA    = 1.6634E-02 1/V     DELTA   = 1.0000E-02 V      
+A0      = 1.9977E+00 -       A1      = 4.7491E-01 1/V     A2      = 3.0000E-01 -      
+B0      = 1.9492E-07 m       B1      = 6.4229E-07 m       PVAG    = 2.0992E-02 -      
+PDIBLC1 = 1.7666E-03 -       PDIBLC2 = 7.7284E-07 -       PDIBLCB =-1.0000E-03 1/V    
+DROUT   = 1.0119E-03 -       VSAT    = 1.1310E+05 m/s     PSCBE1  = 4.8722E+10 V/m    
+PSCBE2  = 5.0000E-10 m/V     PRWB    =-4.9866E-01 V^-1/2  PRWG    = 5.0000E-01 1/V    
+RDSW    = 1.9832E+02 Ohm.um  AGS     = 4.1869E-01 1/V     
+
+ * Geometry modulation related parameters *
+   --------------------------------------  
+LREF    = 0.0        m       WREF    = 0.0        m       LINT    = 2.9445E-08 m      
+DLC     = 2.9445E-08 m       LL      = 0.0        m       LW      = 0.0        m      
+LWL     = 0.0        m       LLN     = 1.0000E+00 -       LWN     = 1.0000E+00 -      
+WINT    = 0.0        m       DWC     = 0.0        m       WL      = 0.0        m      
+WW      = 0.0        m       WWL     = 0.0        m       WLN     = 1.0000E+00 -      
+WWN     = 1.0000E+00 -       WR      = 1.0000E+00 -       W0      = 1.0000E-06 m      
+DWG     =-2.7987E-08 m/V     DWB     =-4.8380E-10 m/V^1/2 
+
+ * Temperature effect parameters *
+   -----------------------------  
+UPDATEPHI= 0          -       AT      = 3.3000E+04 m/sec   UTE     =-1.5000E+00 -      
+KT1     =-1.1000E-01 V       KT2     = 2.2000E-02 -       KT1L    = 0.0        mV     
+UA1     = 4.3100E-09 m/V     UB1     =-7.6100E-18 (m/V)^2 UC1     =-5.6000E-11 m/V^2  
+PRT     = 0.0        Ohm.um  
+
+ * Overlap capacitance related and dynamic model parameters *
+   --------------------------------------------------------  
+XPART   = 5.0000E-01 -       CLC     = 1.0000E-07 m       CLE     = 6.0000E-01 -      
+CGDO    = 6.3500E-10 F/m     CGDL    = 0.0        F/m     CGSO    = 6.3500E-10 F/m    
+CGSL    = 0.0        F/m     CGBO    = 1.0000E-12 F/m     CKAPPA  = 6.0000E-01 V      
+CF      = 0.0        F/m     ELM     = 5.0000E+00 -       VFBCV   =-1.0000E+00 -      
+
+ * Substrate current related model parameters *
+   ----------------------------------------------
+ALPHA0  = 0.0        m/V     BETA0   = 3.0000E+01 V       
+
+ * Process and parameters extraction related model parameters *
+   ----------------------------------------------------------  
+TOX     = 4.1000E-09 m       DTOXCV  = 0.0        m       NGATE   = 0.0        At/cm^3
+NLX     = 1.1941E-07 m       XL      = 0.0        m       XW      =-1.0000E-08 m      
+ND      = 1.0000E+20 At/cm^3 
+
+ * Noise effect related model parameters *
+   -------------------------------------  
+THMLEV  = 0          -       FLKLEV  = 0          -       AF      = 1.0000E+00 -      
+KF      = 1.0000E-09 -       EF      = 1.1388E+00 -       NSTAR   = 2.0000E+14 -      
+FLKFLAG = 0.0        -       NOIFLAG = 0.0        -       NOIA    = 3.5746E+18 unit2  
+NOIB    = 2.5000E+03 1/V     NOIC    = 2.6126E-11 unit3   EM      = 4.1000E+07 V/m    
+WPEMOD  = 0.0        -       SCREF   = 1.0000E-06 m       KVTH0WE = 0.0        V      
+K2WE    = 0.0        -       KU0WE   = 0.0        -       WEB     = 0.0        -      
+WEC     = 0.0        -       GAMMA   = 6.6667E-01 -       
+
+ * Binning Parameters *
+   -------------------  
+BINUNIT = 1.0000E+00 -       
+* Display only non null Binning Parameters *
+PK2     = 1.8219E-03 -       PU0     =-1.5581E+00 -       PUA     =-6.3689E-11 -      
+PUB     = 1.0000E-21 -       PVSAT   = 4.9842E+01 -       LKETA   =-1.4959E-03 -      
+WKETA   = 2.2246E-02 -       PKETA   =-2.5366E-03 -       PRDSW   = 9.0575E+00 -      
+PETA0   = 2.8278E-05 -       PVTH0   = 2.3020E-03 -       
+   ------------------------------------------------------------------------  
+
+ *** Common extrinsic model parameters ***
+OPTACM  = 1          -       GDSNOI  = 1.0000E+00 -       ACM     = 0          -      
+ALEV    = 0          -       RLEV    = 0          -       
+ * Access resistances related parameters *
+RD      = 0.0        Ohm     RS      = 0.0        Ohm     RSH     = 7.7000E+00 Ohm/Sq.
+RDC     = 0.0        Ohm     RSC     = 0.0        Ohm     
+ * Geometry related parameters *
+LD      = 2.9445E-08 m       WD      = 0.0        m       DL      = 0.0        m      
+DW      = 0.0        m       LDIF    = 0.0        m       HDIF    = 0.0        m      
+WMLT    = 1.0000E+00 -       LMLT    = 1.0000E+00 -       DEL     = 0.0        m      
+XJ      = 1.0000E-07 m       
+ * Static bulk-diode related parameters *
+DIOLEV  = 2          -       JS      = 0.0        A/m^2   JSW     = 0.0        A/m    
+IS      = 0.0        A       NJ      = 1.0000E+00 -       NDS     = 1.0000E+00 -      
+VNDS    =-1.0000E+00 V       VDLIN   = 5.0000E-01 -       
+ * Dynamic bulk-diode related parameters *
+DCAPLEV = 3          -       CJGATE  = 0.0                CBD     = 0.0        F      
+CBS     = 0.0        F       CJ      = 1.1426E-03 F/m^2   CJSW    = 2.4875E-10 F/m    
+FC      = 0.0        -       MJ      = 4.0995E-01 -       MJSW    = 3.4786E-01 -      
+TT      = 0.0        s       PB      = 8.4970E-01 V       PBSW    = 8.7955E-01 V      
+ * Temperature related Parameters 
+EG      = 1.1100E+00 eV      GAP1    = 7.0200E-04 eV/degK GAP2    = 1.1080E+03 degK   
+TNOM    = 2.7000E+01 degC    TLEV    = 0          -       TLEVC   = 0          -      
+TLEVI   = 3          -       XTI     = 0.0        -       
+ * Temperature Access Resistance related parameters * TLEVR = 1 
+TRD1    = 0.0        1/degK  TRS1    = 0.0        1/degK  TRSH1   = 0.0        1/degK 
+TRD2    = 0.0        unit4   TRS2    = 0.0        unit4   TRSH2   = 0.0        unit4  
+
+unit1 represents m^2/V/sec
+unit2 represents V^-1.m^-2
+unit3 represents V^-1.m^2
+unit4 represents 1/degK^2
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPTION SUMMARY                                         TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+
+
+
+*** DC Control Options : 
+
+GMIN           = 1.00e-12 NMAXSIZE       = 100000   ITL1           = 100      
+GRAMP          = 0        NETSIZE        = 100      VMINDC         = UNDEF    
+VMAXDC         = UNDEF    
+
+*** Initial Accuracy Control Options (May be adjusted during simulation): 
+
+ITOL           = 1.00e-06 EPS            = 5.00e-03 VNTOL          = 1.00e-06 
+RELTOL         = 1.00e-03 RELERR         = 5.00e-02 PIVREL         = 1.00e-03 
+PIVTOL         = 1.00e-16 ABSTOL         = 1.00e-12 FLXTOL         = 1.00e-11 
+MAXORD         = 2.00e+00 
+
+*** Time-step Control Options : 
+
+ZOOMTIME       = 1.00e+00 STEP           = 0.00e+00 STARTSMP       = 0.00e+00 
+FREQSMP        = 0.00e+00 COURESOL       = 0.00e+00 TRTOL          = 7.00e+00 
+HMIN           = 1.00e-12 ITL3           = 3        ITL4           = 13       
+FT             = 1.25e-01 DCLOG          = 1.00e+00 LVLTIM         = 2        
+LVLCNV         = 2        DVDT           = -1       RELVAR         = 1.50e-01 
+ABSVAR         = 2.00e-01 SAMPLE         = 0.00e+00 HMAX           = UNDEF    
+
+
+*** MosFet default Options : 
+
+SCALE          = 1.00e+00 SCALM          = 1.00e+00 SCALEBSIM      = 1.00e+00 
+DEFAD          = UNDEF    DEFAS          = UNDEF    DEFPD          = UNDEF    
+DEFPS          = UNDEF    DEFW           = 1.00e-04 DEFL           = 1.00e-04 
+DEFNRD         = UNDEF    DEFNRS         = UNDEF    XA             = 6.00e-06 
+LIMRMOS        = UNDEF    SHRINK         = 1.00e+00 
+
+*** General Information Options : 
+
+TUNING         = UNDEF    
+CPTIME         = UNDEF    STAT           = 0        TIMEDIV        = 0        
+SIMUDIV        = 10       SAVETIME       = 0        MAXTRAN        = 1000     
+MAXNODES       = 10000    MAXV           = 1.00e+13 LIMPROBE       = 10000    
+FLICKER_NOISE  = 0        THERMAL_NOISE  = 0        TNOM           = 2.50e+01 
+TMAX           = UNDEF    
+SPICDC         = 0        SPIOUT         = 0        NEWTON         = 1        
+OSR            = 0        TRAP           = 1        GEAR           = 0        
+BE             = 0        PROBEOP        = 0        NOLAT          = 0        
+NWLAT          = 0        ANALOG         = 0        BBDEBUG        = 0        
+NOSIZECHK      = 0        QTRUNC         = 0        UNBOUND        = 0        
+LCAPOP         = 0        NOAEX          = 0        AEX            = 0        
+AEX            = 0        STVER          = 0        MOTOROLA       = 0        
+AMS            = 0        ASPEC          = 0        INPUT          = 0        
+NOINIT         = 0        PSF            = 0        NOBIN          = 0        
+NOCOU          = 1        WL             = 0        NODE           = 0        
+LIST           = 0        SPI3BIN        = 0        SPI3ASC        = 0        
+NOMOD          = 0        NOBIN          = 0        NOCOU          = 1        
+RMOS           = 0        NWRMOS         = 1        NONWRMOS       = 0        
+USEDEFAP       = 0        NOASCII        = 0        ASCII          = 1        
+MIXED          = 0        SWITCH         = 0        USERSWITCH     = 0        
+TIMING         = 0        MODWL          = 1        ULOGIC         = 0        
+
+
+
+
+***>  8-Dec-2021 16:28:57 - ELABORATION completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+***>  8-Dec-2021 16:28:57 - STARTING SIMULATION PHASE ...
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0726E+00  N2           2.2116E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0726E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.8301E-05   1.8000E+00  -3.2942E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  3.2942E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              9.1507E-06   9.1507E-06   1.8301E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             4.7884E-01   4.7884E-01   7.0000E-01  
+VDS             8.5140E-01   8.5140E-01   2.2116E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.7349E-01   3.7349E-01   3.7360E-01  
+VDSAT           9.2162E-02   9.2162E-02   2.4144E-01  
+GM              1.4654E-04   1.4654E-04   1.0094E-04  
+GDS             2.6062E-07   2.6062E-07   2.0737E-05  
+RON             3.8370E+06   3.8370E+06   4.8222E+04  
+GMB             4.1657E-05   4.1657E-05   2.7559E-05  
+Cdd             3.5683E-14   3.5683E-14   4.1411E-14  
+Cdg            -7.6228E-13  -7.6228E-13  -2.2881E-13  
+Cds             9.5821E-13   9.5821E-13   2.5610E-13  
+Cdb            -2.3162E-13  -2.3162E-13  -6.8701E-14  
+Cgd            -3.4990E-14  -3.4990E-14  -4.5819E-14  
+Cgg             1.8783E-12   1.8783E-12   5.2678E-13  
+Cgs            -1.6879E-12  -1.6879E-12  -4.5848E-13  
+Cgb            -1.5544E-13  -1.5544E-13  -2.2472E-14  
+Csd            -3.6935E-16  -3.6935E-16   3.2466E-14  
+Csg            -7.6228E-13  -7.6228E-13  -2.2881E-13  
+Css             9.9426E-13   9.9426E-13   2.6505E-13  
+Csb            -2.3162E-13  -2.3162E-13  -6.8701E-14  
+Cbd            -3.2355E-16  -3.2355E-16  -2.8057E-14  
+Cbg            -3.5378E-13  -3.5378E-13  -6.9148E-14  
+Cbs            -2.6457E-13  -2.6457E-13  -6.2669E-14  
+Cbb             6.1868E-13   6.1868E-13   1.5987E-13  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.0535E-01   1.0535E-01   3.2640E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -9.1507E-06  -9.1507E-06  
+Ibd             1.4549E-12   1.4549E-12  
+Ibs             0.0          0.0         
+VGS            -7.2744E-01  -7.2744E-01  
+VDS            -7.2744E-01  -7.2744E-01  
+VBS             0.0          0.0         
+VTH            -3.9376E-01  -3.9376E-01  
+VDSAT          -2.5676E-01  -2.5676E-01  
+GM              5.1823E-05   5.1823E-05  
+GDS             2.2036E-07   2.2036E-07  
+RON             4.5381E+06   4.5381E+06  
+GMB             1.6651E-05   1.6651E-05  
+Cdd             1.4932E-14   1.4932E-14  
+Cdg            -5.3510E-13  -5.3510E-13  
+Cds             6.8722E-13   6.8722E-13  
+Cdb            -1.6704E-13  -1.6704E-13  
+Cgd            -1.3651E-14  -1.3651E-14  
+Cgg             1.2858E-12   1.2858E-12  
+Cgs            -1.2449E-12  -1.2449E-12  
+Cgb            -2.7320E-14  -2.7320E-14  
+Csd            -2.7087E-16  -2.7087E-16  
+Csg            -5.3510E-13  -5.3510E-13  
+Css             7.0242E-13   7.0242E-13  
+Csb            -1.6704E-13  -1.6704E-13  
+Cbd            -1.0093E-15  -1.0093E-15  
+Cbg            -2.1563E-13  -2.1563E-13  
+Cbs            -1.4477E-13  -1.4477E-13  
+Cbb             3.6141E-13   3.6141E-13  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.3368E-01   3.3368E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 2 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.1017E+00  N2           1.6116E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.1017E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.6225E-05   1.8000E+00  -2.9205E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.9205E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              8.1125E-06   8.1125E-06   1.6225E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.3884E-01   5.3884E-01   7.0000E-01  
+VDS             9.4052E-01   9.4052E-01   1.6116E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.7152E-01   3.7152E-01   3.7364E-01  
+VDSAT           1.3141E-01   1.3141E-01   2.4141E-01  
+GM              9.5543E-05   9.5543E-05   7.8068E-05  
+GDS             1.2757E-07   1.2757E-07   5.0461E-05  
+RON             7.8386E+06   7.8386E+06   1.9817E+04  
+GMB             2.6708E-05   2.6708E-05   2.1713E-05  
+Cdd             2.0127E-14   2.0127E-14   8.9012E-14  
+Cdg            -6.4616E-13  -6.4616E-13  -2.5416E-13  
+Cds             8.2510E-13   8.2510E-13   2.4068E-13  
+Cdb            -1.9907E-13  -1.9907E-13  -7.5534E-14  
+Cgd            -1.9907E-14  -1.9907E-14  -1.0011E-13  
+Cgg             1.5719E-12   1.5719E-12   5.5568E-13  
+Cgs            -1.4417E-12  -1.4417E-12  -4.4000E-13  
+Cgb            -1.1033E-13  -1.1033E-13  -1.5568E-14  
+Csd            -4.3103E-17  -4.3103E-17   8.0068E-14  
+Csg            -6.4616E-13  -6.4616E-13  -2.5416E-13  
+Css             8.4527E-13   8.4527E-13   2.4962E-13  
+Csb            -1.9907E-13  -1.9907E-13  -7.5534E-14  
+Cbd            -1.7681E-16  -1.7681E-16  -6.8967E-14  
+Cbg            -2.7962E-13  -2.7962E-13  -4.7367E-14  
+Cbs            -2.2867E-13  -2.2867E-13  -5.0301E-14  
+Cbb             5.0847E-13   5.0847E-13   1.6664E-13  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.6731E-01   1.6731E-01   3.2636E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -8.1125E-06  -8.1125E-06  
+Ibd             1.3966E-12   1.3966E-12  
+Ibs             0.0          0.0         
+VGS            -6.9832E-01  -6.9832E-01  
+VDS            -6.9832E-01  -6.9832E-01  
+VBS             0.0          0.0         
+VTH            -3.9351E-01  -3.9351E-01  
+VDSAT          -2.3571E-01  -2.3571E-01  
+GM              5.0584E-05   5.0584E-05  
+GDS             1.9866E-07   1.9866E-07  
+RON             5.0336E+06   5.0336E+06  
+GMB             1.6179E-05   1.6179E-05  
+Cdd             1.7433E-14   1.7433E-14  
+Cdg            -6.8985E-13  -6.8985E-13  
+Cds             8.8850E-13   8.8850E-13  
+Cdb            -2.1609E-13  -2.1609E-13  
+Cgd            -1.5867E-14  -1.5867E-14  
+Cgg             1.6574E-12   1.6574E-12  
+Cgs            -1.6036E-12  -1.6036E-12  
+Cgb            -3.7864E-14  -3.7864E-14  
+Csd            -3.0783E-16  -3.0783E-16  
+Csg            -6.8985E-13  -6.8985E-13  
+Css             9.0624E-13   9.0624E-13  
+Csb            -2.1609E-13  -2.1609E-13  
+Cbd            -1.2582E-15  -1.2582E-15  
+Cbg            -2.7767E-13  -2.7767E-13  
+Cbs            -1.9112E-13  -1.9112E-13  
+Cbb             4.7005E-13   4.7005E-13  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.0481E-01   3.0481E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 3 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.3617E+00  N2           4.1306E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.3617E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -3.3883E-07   1.8000E+00  -6.0990E-07  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  6.0990E-07 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              1.6942E-07   1.6942E-07   3.3883E-07  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             2.8694E-01   2.8694E-01   7.0000E-01  
+VDS             9.4864E-01   9.4864E-01   4.1306E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.7465E-01   3.7465E-01   3.7109E-01  
+VDSAT           3.4196E-02   3.4196E-02   2.4220E-01  
+GM              4.2363E-06   4.2363E-06   2.0677E-06  
+GDS             9.9134E-09   9.9134E-09   1.4735E-08  
+RON             1.0087E+08   1.0087E+08   6.7866E+07  
+GMB             1.2904E-06   1.2904E-06   5.4898E-07  
+Cdd             3.6440E-14   3.6440E-14   2.5417E-16  
+Cdg            -8.6920E-14  -8.6920E-14  -5.4893E-15  
+Cds             6.7537E-14   6.7537E-14   6.9188E-15  
+Cdb            -1.7056E-14  -1.7056E-14  -1.6837E-15  
+Cgd            -3.5956E-14  -3.5956E-14  -2.6097E-16  
+Cgg             6.4564E-13   6.4564E-13   1.3252E-14  
+Cgs            -1.5219E-13  -1.5219E-13  -1.2271E-14  
+Cgb            -4.5749E-13  -4.5749E-13  -7.1974E-16  
+Csd            -4.7070E-17  -4.7070E-17   6.4878E-17  
+Csg            -8.6920E-14  -8.6920E-14  -5.4893E-15  
+Css             1.0402E-13   1.0402E-13   7.1081E-15  
+Csb            -1.7056E-14  -1.7056E-14  -1.6837E-15  
+Cbd            -4.3645E-16  -4.3645E-16  -5.8071E-17  
+Cbg            -4.7180E-13  -4.7180E-13  -2.2735E-15  
+Cbs            -1.9366E-14  -1.9366E-14  -1.7555E-15  
+Cbb             4.9160E-13   4.9160E-13   4.0871E-15  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         subthreshold subthreshold saturation   
+VTH_D          -8.7715E-02  -8.7715E-02   3.2891E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -1.6942E-07  -1.6942E-07  
+Ibd             8.7659E-13   8.7659E-13  
+Ibs             0.0          0.0         
+VGS            -4.3829E-01  -4.3829E-01  
+VDS            -4.3829E-01  -4.3829E-01  
+VBS             0.0          0.0         
+VTH            -3.9439E-01  -3.9439E-01  
+VDSAT          -6.5094E-02  -6.5094E-02  
+GM              3.2772E-06   3.2772E-06  
+GDS             1.0903E-08   1.0903E-08  
+RON             9.1716E+07   9.1716E+07  
+GMB             1.0153E-06   1.0153E-06  
+Cdd             6.4658E-15   6.4658E-15  
+Cdg            -1.7744E-13  -1.7744E-13  
+Cds             2.2650E-13   2.2650E-13  
+Cdb            -5.5527E-14  -5.5527E-14  
+Cgd            -5.9442E-15  -5.9442E-15  
+Cgg             4.6330E-13   4.6330E-13  
+Cgs            -4.0804E-13  -4.0804E-13  
+Cgb            -4.9316E-14  -4.9316E-14  
+Csd            -2.2586E-16  -2.2586E-16  
+Csg            -1.7744E-13  -1.7744E-13  
+Css             2.3319E-13   2.3319E-13  
+Csb            -5.5527E-14  -5.5527E-14  
+Cbd            -2.9566E-16  -2.9566E-16  
+Cbg            -1.0842E-13  -1.0842E-13  
+Cbs            -5.1658E-14  -5.1658E-14  
+Cbb             1.6037E-13   1.6037E-13  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           4.3902E-02   4.3902E-02  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 4 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.1332E+00  N2           1.8013E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.1332E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.7080E-05   1.8000E+00  -3.0745E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  3.0745E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              8.5402E-06   8.5402E-06   1.7080E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.1987E-01   5.1987E-01   7.0000E-01  
+VDS             9.5309E-01   9.5309E-01   1.8013E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.7292E-01   3.7292E-01   3.7363E-01  
+VDSAT           1.1799E-01   1.1799E-01   2.4142E-01  
+GM              1.1125E-04   1.1125E-04   8.6137E-05  
+GDS             1.8527E-07   1.8527E-07   3.9853E-05  
+RON             5.3976E+06   5.3976E+06   2.5092E+04  
+GMB             3.1269E-05   3.1269E-05   2.3799E-05  
+Cdd             1.9990E-14   1.9990E-14   7.0485E-14  
+Cdg            -4.8072E-13  -4.8072E-13  -2.4481E-13  
+Cds             6.0728E-13   6.0728E-13   2.4731E-13  
+Cdb            -1.4655E-13  -1.4655E-13  -7.2978E-14  
+Cgd            -1.9635E-14  -1.9635E-14  -7.8982E-14  
+Cgg             1.1724E-12   1.1724E-12   5.4503E-13  
+Cgs            -1.0686E-12  -1.0686E-12  -4.4793E-13  
+Cgb            -8.4176E-14  -8.4176E-14  -1.8113E-14  
+Csd            -1.8039E-16  -1.8039E-16   6.1541E-14  
+Csg            -4.8072E-13  -4.8072E-13  -2.4481E-13  
+Css             6.2745E-13   6.2745E-13   2.5625E-13  
+Csb            -1.4655E-13  -1.4655E-13  -7.2978E-14  
+Cbd            -1.7435E-16  -1.7435E-16  -5.3045E-14  
+Cbg            -2.1097E-13  -2.1097E-13  -5.5397E-14  
+Cbs            -1.6613E-13  -1.6613E-13  -5.5628E-14  
+Cbb             3.7727E-13   3.7727E-13   1.6407E-13  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.4695E-01   1.4695E-01   3.2637E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -8.5402E-06  -8.5402E-06  
+Ibd             1.3336E-12   1.3336E-12  
+Ibs             0.0          0.0         
+VGS            -6.6678E-01  -6.6678E-01  
+VDS            -6.6678E-01  -6.6678E-01  
+VBS             0.0          0.0         
+VTH            -3.9362E-01  -3.9362E-01  
+VDSAT          -2.1276E-01  -2.1276E-01  
+GM              5.9765E-05   5.9765E-05  
+GDS             2.3010E-07   2.3010E-07  
+RON             4.3459E+06   4.3459E+06  
+GMB             1.9014E-05   1.9014E-05  
+Cdd             2.2206E-14   2.2206E-14  
+Cdg            -8.6650E-13  -8.6650E-13  
+Cds             1.1158E-12   1.1158E-12  
+Cdb            -2.7152E-13  -2.7152E-13  
+Cgd            -2.0213E-14  -2.0213E-14  
+Cgg             2.0824E-12   2.0824E-12  
+Cgs            -2.0116E-12  -2.0116E-12  
+Cgb            -5.0620E-14  -5.0620E-14  
+Csd            -4.4240E-16  -4.4240E-16  
+Csg            -8.6650E-13  -8.6650E-13  
+Css             1.1385E-12   1.1385E-12  
+Csb            -2.7152E-13  -2.7152E-13  
+Cbd            -1.5511E-15  -1.5511E-15  
+Cbg            -3.4944E-13  -3.4944E-13  
+Cbs            -2.4267E-13  -2.4267E-13  
+Cbb             5.9366E-13   5.9366E-13  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           2.7316E-01   2.7316E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 5 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.4786E+00  N2           1.1025E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.4786E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -4.8291E-07   1.8000E+00  -8.6923E-07  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  8.6923E-07 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              2.3363E-07   2.3363E-07   4.6726E-07  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.8975E-01   5.8975E-01   7.0000E-01  
+VDS             1.3684E+00   1.3684E+00   1.1025E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.7226E-01   3.7226E-01   3.7565E-01  
+VDSAT           1.6482E-01   1.6482E-01   2.3807E-01  
+GM              2.1689E-06   2.1689E-06   2.0113E-06  
+GDS             4.7301E-09   4.7301E-09   2.9431E-06  
+RON             2.1141E+08   2.1141E+08   3.3978E+05  
+GMB             5.9435E-07   5.9435E-07   5.6591E-07  
+Cdd             1.8632E-16   1.8632E-16   1.9188E-15  
+Cdg            -3.5531E-15  -3.5531E-15  -3.5972E-15  
+Cds             4.4392E-15   4.4392E-15   2.7251E-15  
+Cdb            -1.0725E-15  -1.0725E-15  -1.0468E-15  
+Cgd            -1.8171E-16  -1.8171E-16  -2.1074E-15  
+Cgg             8.6433E-15   8.6433E-15   7.5505E-15  
+Cgs            -7.9348E-15  -7.9348E-15  -5.3390E-15  
+Cgb            -5.2680E-16  -5.2680E-16  -1.0411E-16  
+Csd            -2.9698E-18  -2.9698E-18   1.7295E-15  
+Csg            -3.5531E-15  -3.5531E-15  -3.5972E-15  
+Css             4.6285E-15   4.6285E-15   2.9144E-15  
+Csb            -1.0725E-15  -1.0725E-15  -1.0468E-15  
+Cbd            -1.6365E-18  -1.6365E-18  -1.5410E-15  
+Cbg            -1.5371E-15  -1.5371E-15  -3.5606E-16  
+Cbs            -1.1330E-15  -1.1330E-15  -3.0059E-16  
+Cbb             2.6718E-15   2.6718E-15   2.1976E-15  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           2.1749E-01   2.1749E-01   3.2435E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -2.3375E-07  -2.3375E-07  
+Ibd             6.4278E-13   6.4278E-13  
+Ibs             0.0          0.0         
+VGS            -3.2139E-01  -3.2139E-01  
+VDS            -3.2139E-01  -3.2139E-01  
+VBS             0.0          0.0         
+VTH            -5.1027E-01  -5.1027E-01  
+VDSAT          -3.9478E-02  -3.9478E-02  
+GM              5.7599E-06   5.7599E-06  
+GDS             1.0559E-07   1.0559E-07  
+RON             9.4705E+06   9.4705E+06  
+GMB             1.8896E-06   1.8896E-06  
+Cdd             2.1484E-14   2.1484E-14  
+Cdg            -2.1570E-14  -2.1570E-14  
+Cds             1.1582E-16   1.1582E-16  
+Cdb            -2.9827E-17  -2.9827E-17  
+Cgd            -2.1459E-14  -2.1459E-14  
+Cgg             5.1551E-14   5.1551E-14  
+Cgs            -2.1928E-14  -2.1928E-14  
+Cgb            -8.1635E-15  -8.1635E-15  
+Csd            -2.0512E-19  -2.0512E-19  
+Csg            -2.1570E-14  -2.1570E-14  
+Css             2.1600E-14   2.1600E-14  
+Csb            -2.9827E-17  -2.9827E-17  
+Cbd            -2.4874E-17  -2.4874E-17  
+Cbg            -8.4105E-15  -8.4105E-15  
+Cbs             2.1222E-16   2.1222E-16  
+Cbb             8.2232E-15   8.2232E-15  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         subthreshold subthreshold 
+VTH_D          -1.8887E-01  -1.8887E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 6 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.2214E+00  N2           2.8334E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.2214E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.4273E-05   1.8000E+00  -2.5692E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.5692E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.1043E-06   7.1043E-06   1.4209E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             4.1666E-01   4.1666E-01   7.0000E-01  
+VDS             9.3808E-01   9.3808E-01   2.8334E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.8246E-01   3.8246E-01   3.7764E-01  
+VDSAT           5.7877E-02   5.7877E-02   2.3759E-01  
+GM              1.5031E-04   1.5031E-04   8.5186E-05  
+GDS             5.9224E-07   5.9224E-07   4.5263E-06  
+RON             1.6885E+06   1.6885E+06   2.2093E+05  
+GMB             4.3699E-05   4.3699E-05   2.3088E-05  
+Cdd             3.9764E-14   3.9764E-14   7.1868E-15  
+Cdg            -2.8312E-13  -2.8312E-13  -6.1796E-14  
+Cds             3.2165E-13   3.2165E-13   7.2816E-14  
+Cdb            -7.8302E-14  -7.8302E-14  -1.8207E-14  
+Cgd            -3.8712E-14  -3.8712E-14  -7.4357E-15  
+Cgg             7.5038E-13   7.5038E-13   1.4672E-13  
+Cgs            -6.0045E-13  -6.0045E-13  -1.3212E-13  
+Cgb            -1.1121E-13  -1.1121E-13  -7.1698E-15  
+Csd            -5.9919E-16  -5.9919E-16   3.0568E-15  
+Csg            -2.8312E-13  -2.8312E-13  -6.1796E-14  
+Css             3.6202E-13   3.6202E-13   7.6946E-14  
+Csb            -7.8302E-14  -7.8302E-14  -1.8207E-14  
+Cbd            -4.5282E-16  -4.5282E-16  -2.8078E-15  
+Cbg            -1.8414E-13  -1.8414E-13  -2.3130E-14  
+Cbs            -8.3220E-14  -8.3220E-14  -1.7645E-14  
+Cbb             2.6781E-13   2.6781E-13   4.3583E-14  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   saturation   
+VTH_D           3.4199E-02   3.4199E-02   3.2236E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.1043E-06  -7.1043E-06  
+Ibd             1.1572E-12   1.1572E-12  
+Ibs             0.0          0.0         
+VGS            -5.7858E-01  -5.7858E-01  
+VDS            -5.7858E-01  -5.7858E-01  
+VBS             0.0          0.0         
+VTH            -3.9417E-01  -3.9417E-01  
+VDSAT          -1.4920E-01  -1.4920E-01  
+GM              7.2996E-05   7.2996E-05  
+GDS             2.7248E-07   2.7248E-07  
+RON             3.6701E+06   3.6701E+06  
+GMB             2.2850E-05   2.2850E-05  
+Cdd             3.4580E-14   3.4580E-14  
+Cdg            -1.2071E-12  -1.2071E-12  
+Cds             1.5501E-12   1.5501E-12  
+Cdb            -3.7763E-13  -3.7763E-13  
+Cgd            -3.1572E-14  -3.1572E-14  
+Cgg             2.9092E-12   2.9092E-12  
+Cgs            -2.7910E-12  -2.7910E-12  
+Cgb            -8.6602E-14  -8.6602E-14  
+Csd            -9.9064E-16  -9.9064E-16  
+Csg            -1.2071E-12  -1.2071E-12  
+Css             1.5857E-12   1.5857E-12  
+Csb            -3.7763E-13  -3.7763E-13  
+Cbd            -2.0178E-15  -2.0178E-15  
+Cbg            -4.9503E-13  -4.9503E-13  
+Cbs            -3.4481E-13  -3.4481E-13  
+Cbb             8.4186E-13   8.4186E-13  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           1.8441E-01   1.8441E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 7 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.1087E+00  N2           1.9360E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.1087E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5494E-05   1.8000E+00  -2.7890E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7890E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.7472E-06   7.7472E-06   1.5494E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.0640E-01   5.0640E-01   7.0000E-01  
+VDS             9.1508E-01   9.1508E-01   1.9360E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.7344E-01   3.7344E-01   3.7283E-01  
+VDSAT           1.0902E-01   1.0902E-01   2.4211E-01  
+GM              1.0826E-04   1.0826E-04   8.0458E-05  
+GDS             1.9406E-07   1.9406E-07   2.9103E-05  
+RON             5.1532E+06   5.1532E+06   3.4361E+04  
+GMB             3.0542E-05   3.0542E-05   2.2127E-05  
+Cdd             1.9959E-14   1.9959E-14   6.7060E-14  
+Cdg            -4.3765E-13  -4.3765E-13  -2.7125E-13  
+Cds             5.5061E-13   5.5061E-13   2.8558E-13  
+Cdb            -1.3292E-13  -1.3292E-13  -8.1396E-14  
+Cgd            -1.9567E-14  -1.9567E-14  -7.5398E-14  
+Cgg             1.0698E-12   1.0698E-12   6.1055E-13  
+Cgs            -9.7102E-13  -9.7102E-13  -5.1275E-13  
+Cgb            -7.9260E-14  -7.9260E-14  -2.2399E-14  
+Csd            -2.1089E-16  -2.1089E-16   5.8115E-14  
+Csg            -4.3765E-13  -4.3765E-13  -2.7125E-13  
+Css             5.7078E-13   5.7078E-13   2.9453E-13  
+Csb            -1.3292E-13  -1.3292E-13  -8.1396E-14  
+Cbd            -1.8177E-16  -1.8177E-16  -4.9777E-14  
+Cbg            -1.9454E-13  -1.9454E-13  -6.8056E-14  
+Cbs            -1.5038E-13  -1.5038E-13  -6.7359E-14  
+Cbb             3.4510E-13   3.4510E-13   1.8519E-13  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3296E-01   1.3296E-01   3.2717E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.7472E-06  -7.7472E-06  
+Ibd             1.3826E-12   1.3826E-12  
+Ibs             0.0          0.0         
+VGS            -6.9132E-01  -6.9132E-01  
+VDS            -6.9132E-01  -6.9132E-01  
+VBS             0.0          0.0         
+VTH            -3.9313E-01  -3.9313E-01  
+VDSAT          -2.3088E-01  -2.3088E-01  
+GM              4.9465E-05   4.9465E-05  
+GDS             1.7688E-07   1.7688E-07  
+RON             5.6536E+06   5.6536E+06  
+GMB             1.5809E-05   1.5809E-05  
+Cdd             2.0305E-14   2.0305E-14  
+Cdg            -9.2905E-13  -9.2905E-13  
+Cds             1.2010E-12   1.2010E-12  
+Cdb            -2.9224E-13  -2.9224E-13  
+Cgd            -1.8383E-14  -1.8383E-14  
+Cgg             2.2308E-12   2.2308E-12  
+Cgs            -2.1601E-12  -2.1601E-12  
+Cgb            -5.2299E-14  -5.2299E-14  
+Csd            -2.8440E-16  -2.8440E-16  
+Csg            -9.2905E-13  -9.2905E-13  
+Css             1.2216E-12   1.2216E-12  
+Csb            -2.9224E-13  -2.9224E-13  
+Cbd            -1.6371E-15  -1.6371E-15  
+Cbg            -3.7272E-13  -3.7272E-13  
+Cbs            -2.6243E-13  -2.6243E-13  
+Cbb             6.3679E-13   6.3679E-13  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           2.9819E-01   2.9819E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 8 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0235E+00  N2           1.9674E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0235E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.9242E-05   1.8000E+00  -3.4635E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  3.4635E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              9.6156E-06   9.6156E-06   1.9231E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.0326E-01   5.0326E-01   7.0000E-01  
+VDS             8.2672E-01   8.2672E-01   1.9674E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.7156E-01   3.7156E-01   3.7242E-01  
+VDSAT           1.0814E-01   1.0814E-01   2.4258E-01  
+GM              1.3545E-04   1.3545E-04   1.0042E-04  
+GDS             1.7582E-07   1.7582E-07   3.4330E-05  
+RON             5.6875E+06   5.6875E+06   2.9129E+04  
+GMB             3.8218E-05   3.8218E-05   2.7591E-05  
+Cdd             3.7835E-14   3.7835E-14   9.2021E-14  
+Cdg            -1.1957E-12  -1.1957E-12  -3.8639E-13  
+Cds             1.5264E-12   1.5264E-12   4.1065E-13  
+Cdb            -3.6862E-13  -3.6862E-13  -1.1628E-13  
+Cgd            -3.7430E-14  -3.7430E-14  -1.0382E-13  
+Cgg             2.9224E-12   2.9224E-12   8.7142E-13  
+Cgs            -2.6617E-12  -2.6617E-12  -7.3495E-13  
+Cgb            -2.2326E-13  -2.2326E-13  -3.2657E-14  
+Csd            -4.9822E-17  -4.9822E-17   8.0136E-14  
+Csg            -1.1957E-12  -1.1957E-12  -3.8639E-13  
+Css             1.5643E-12   1.5643E-12   4.2254E-13  
+Csb            -3.6862E-13  -3.6862E-13  -1.1628E-13  
+Cbd            -3.5548E-16  -3.5548E-16  -6.8341E-14  
+Cbg            -5.3105E-13  -5.3105E-13  -9.8636E-14  
+Cbs            -4.2909E-13  -4.2909E-13  -9.8240E-14  
+Cbb             9.6050E-13   9.6050E-13   2.6522E-13  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3170E-01   1.3170E-01   3.2758E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -9.6157E-06  -9.6157E-06  
+Ibd             1.5531E-12   1.5531E-12  
+Ibs             0.0          0.0         
+VGS            -7.7654E-01  -7.7654E-01  
+VDS            -7.7654E-01  -7.7654E-01  
+VBS             0.0          0.0         
+VTH            -3.9336E-01  -3.9336E-01  
+VDSAT          -2.9293E-01  -2.9293E-01  
+GM              4.7093E-05   4.7093E-05  
+GDS             1.9617E-07   1.9617E-07  
+RON             5.0977E+06   5.0977E+06  
+GMB             1.5243E-05   1.5243E-05  
+Cdd             1.3446E-14   1.3446E-14  
+Cdg            -5.3050E-13  -5.3050E-13  
+Cds             6.8305E-13   6.8305E-13  
+Cdb            -1.6599E-13  -1.6599E-13  
+Cgd            -1.2249E-14  -1.2249E-14  
+Cgg             1.2739E-12   1.2739E-12  
+Cgs            -1.2373E-12  -1.2373E-12  
+Cgb            -2.4366E-14  -2.4366E-14  
+Csd            -1.9475E-16  -1.9475E-16  
+Csg            -5.3050E-13  -5.3050E-13  
+Css             6.9669E-13   6.9669E-13  
+Csb            -1.6599E-13  -1.6599E-13  
+Cbd            -1.0016E-15  -1.0016E-15  
+Cbg            -2.1294E-13  -2.1294E-13  
+Cbs            -1.4241E-13  -1.4241E-13  
+Cbb             3.5635E-13   3.5635E-13  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.8318E-01   3.8318E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 9 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.1072E+00  N2           1.8686E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.1072E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.7346E-05   1.8000E+00  -3.1223E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  3.1223E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              8.6683E-06   8.6683E-06   1.7337E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.1314E-01   5.1314E-01   7.0000E-01  
+VDS             9.2033E-01   9.2033E-01   1.8686E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.7344E-01   3.7344E-01   3.7362E-01  
+VDSAT           1.1333E-01   1.1333E-01   2.4142E-01  
+GM              1.1709E-04   1.1709E-04   8.8852E-05  
+GDS             2.1079E-07   2.1079E-07   3.6303E-05  
+RON             4.7440E+06   4.7440E+06   2.7546E+04  
+GMB             3.2977E-05   3.2977E-05   2.4495E-05  
+Cdd             2.0358E-14   2.0358E-14   6.4648E-14  
+Cdg            -4.4809E-13  -4.4809E-13  -2.4174E-13  
+Cds             5.6381E-13   5.6381E-13   2.4924E-13  
+Cdb            -1.3608E-13  -1.3608E-13  -7.2148E-14  
+Cgd            -1.9957E-14  -1.9957E-14  -7.2323E-14  
+Cgg             1.0940E-12   1.0940E-12   5.4152E-13  
+Cgs            -9.9457E-13  -9.9457E-13  -4.5025E-13  
+Cgb            -7.9482E-14  -7.9482E-14  -1.8950E-14  
+Csd            -2.1317E-16  -2.1317E-16   5.5703E-14  
+Csg            -4.4809E-13  -4.4809E-13  -2.4174E-13  
+Css             5.8438E-13   5.8438E-13   2.5819E-13  
+Csb            -1.3608E-13  -1.3608E-13  -7.2148E-14  
+Cbd            -1.8767E-16  -1.8767E-16  -4.8028E-14  
+Cbg            -1.9783E-13  -1.9783E-13  -5.8037E-14  
+Cbs            -1.5361E-13  -1.5361E-13  -5.7182E-14  
+Cbb             3.5163E-13   3.5163E-13   1.6325E-13  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3970E-01   1.3970E-01   3.2638E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -8.6683E-06  -8.6683E-06  
+Ibd             1.3856E-12   1.3856E-12  
+Ibs             0.0          0.0         
+VGS            -6.9281E-01  -6.9281E-01  
+VDS            -6.9281E-01  -6.9281E-01  
+VBS             0.0          0.0         
+VTH            -3.9383E-01  -3.9383E-01  
+VDSAT          -2.3151E-01  -2.3151E-01  
+GM              5.5145E-05   5.5145E-05  
+GDS             2.2779E-07   2.2779E-07  
+RON             4.3900E+06   4.3900E+06  
+GMB             1.7618E-05   1.7618E-05  
+Cdd             1.7398E-14   1.7398E-14  
+Cdg            -6.2433E-13  -6.2433E-13  
+Cds             8.0195E-13   8.0195E-13  
+Cdb            -1.9502E-13  -1.9502E-13  
+Cgd            -1.5899E-14  -1.5899E-14  
+Cgg             1.5006E-12   1.5006E-12  
+Cgs            -1.4504E-12  -1.4504E-12  
+Cgb            -3.4340E-14  -3.4340E-14  
+Csd            -3.4292E-16  -3.4292E-16  
+Csg            -6.2433E-13  -6.2433E-13  
+Css             8.1969E-13   8.1969E-13  
+Csb            -1.9502E-13  -1.9502E-13  
+Cbd            -1.1558E-15  -1.1558E-15  
+Cbg            -2.5194E-13  -2.5194E-13  
+Cbs            -1.7128E-13  -1.7128E-13  
+Cbb             4.2438E-13   4.2438E-13  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           2.9898E-01   2.9898E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 10 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.3279E+00  N2           2.8063E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.3279E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -6.4257E-06   1.8000E+00  -1.1566E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  1.1566E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              3.2063E-06   3.2063E-06   6.4126E-06  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             4.1937E-01   4.1937E-01   7.0000E-01  
+VDS             1.0473E+00   1.0473E+00   2.8063E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.7321E-01   3.7321E-01   3.7172E-01  
+VDSAT           6.2029E-02   6.2029E-02   2.4273E-01  
+GM              6.5573E-05   6.5573E-05   3.7873E-05  
+GDS             1.1285E-07   1.1285E-07   2.0941E-06  
+RON             8.8615E+06   8.8615E+06   4.7753E+05  
+GMB             1.8968E-05   1.8968E-05   1.0230E-05  
+Cdd             3.7792E-14   3.7792E-14   1.2813E-14  
+Cdg            -6.9044E-13  -6.9044E-13  -1.3985E-13  
+Cds             8.6242E-13   8.6242E-13   1.6981E-13  
+Cdb            -2.0977E-13  -2.0977E-13  -4.2767E-14  
+Cgd            -3.7128E-14  -3.7128E-14  -1.4079E-14  
+Cgg             1.8071E-12   1.8071E-12   3.3079E-13  
+Cgs            -1.5195E-12  -1.5195E-12  -2.9985E-13  
+Cgb            -2.5044E-13  -2.5044E-13  -1.6857E-14  
+Csd            -3.8198E-16  -3.8198E-16   8.6397E-15  
+Csg            -6.9044E-13  -6.9044E-13  -1.3985E-13  
+Css             9.0060E-13   9.0060E-13   1.7398E-13  
+Csb            -2.0977E-13  -2.0977E-13  -4.2767E-14  
+Cbd            -2.8160E-16  -2.8160E-16  -7.3734E-15  
+Cbg            -4.2621E-13  -4.2621E-13  -5.1080E-14  
+Cbs            -2.4350E-13  -2.4350E-13  -4.3938E-14  
+Cbb             6.6999E-13   6.6999E-13   1.0239E-13  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   saturation   
+VTH_D           4.6161E-02   4.6161E-02   3.2828E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -3.2063E-06  -3.2063E-06  
+Ibd             9.4424E-13   9.4424E-13  
+Ibs             0.0          0.0         
+VGS            -4.7212E-01  -4.7212E-01  
+VDS            -4.7212E-01  -4.7212E-01  
+VBS             0.0          0.0         
+VTH            -4.1298E-01  -4.1298E-01  
+VDSAT          -7.3751E-02  -7.3751E-02  
+GM              5.8466E-05   5.8466E-05  
+GDS             3.8886E-07   3.8886E-07  
+RON             2.5716E+06   2.5716E+06  
+GMB             1.8143E-05   1.8143E-05  
+Cdd             1.5043E-14   1.5043E-14  
+Cdg            -8.5594E-14  -8.5594E-14  
+Cds             9.3427E-14   9.3427E-14  
+Cdb            -2.2877E-14  -2.2877E-14  
+Cgd            -1.4727E-14  -1.4727E-14  
+Cgg             2.1455E-13   2.1455E-13  
+Cgs            -1.8565E-13  -1.8565E-13  
+Cgb            -1.4173E-14  -1.4173E-14  
+Csd            -1.5916E-16  -1.5916E-16  
+Csg            -8.5594E-14  -8.5594E-14  
+Css             1.0863E-13   1.0863E-13  
+Csb            -2.2877E-14  -2.2877E-14  
+Cbd            -1.5750E-16  -1.5750E-16  
+Cbg            -4.3360E-14  -4.3360E-14  
+Cbs            -1.6409E-14  -1.6409E-14  
+Cbb             5.9927E-14   5.9927E-14  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           5.9137E-02   5.9137E-02  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 11 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.2494E+00  N2           1.6033E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.2494E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.8850E-05   1.8000E+00  -3.3930E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  3.3930E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              9.4241E-06   9.4241E-06   1.8848E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.3967E-01   5.3967E-01   7.0000E-01  
+VDS             1.0890E+00   1.0890E+00   1.6033E-01  
+VBS             0.0          0.0          0.0         
+VTH             3.7343E-01   3.7343E-01   3.7388E-01  
+VDSAT           1.3076E-01   1.3076E-01   2.4125E-01  
+GM              1.1134E-04   1.1134E-04   9.0564E-05  
+GDS             2.0482E-07   2.0482E-07   5.9312E-05  
+RON             4.8823E+06   4.8823E+06   1.6860E+04  
+GMB             3.1141E-05   3.1141E-05   2.5200E-05  
+Cdd             1.5465E-14   1.5465E-14   9.7822E-14  
+Cdg            -3.3804E-13  -3.3804E-13  -2.7696E-13  
+Cds             4.2510E-13   4.2510E-13   2.6134E-13  
+Cdb            -1.0253E-13  -1.0253E-13  -8.2205E-14  
+Cgd            -1.5150E-14  -1.5150E-14  -1.0987E-13  
+Cgg             8.2282E-13   8.2282E-13   6.0521E-13  
+Cgs            -7.5143E-13  -7.5143E-13  -4.7851E-13  
+Cgb            -5.6238E-14  -5.6238E-14  -1.6829E-14  
+Csd            -1.8463E-16  -1.8463E-16   8.7752E-14  
+Csg            -3.3804E-13  -3.3804E-13  -2.7696E-13  
+Css             4.4075E-13   4.4075E-13   2.7141E-13  
+Csb            -1.0253E-13  -1.0253E-13  -8.2205E-14  
+Cbd            -1.3037E-16  -1.3037E-16  -7.5705E-14  
+Cbg            -1.4674E-13  -1.4674E-13  -5.1292E-14  
+Cbs            -1.1443E-13  -1.1443E-13  -5.4243E-14  
+Cbb             2.6130E-13   2.6130E-13   1.8124E-13  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.6625E-01   1.6625E-01   3.2612E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -9.4241E-06  -9.4241E-06  
+Ibd             1.1013E-12   1.1013E-12  
+Ibs             0.0          0.0         
+VGS            -5.5064E-01  -5.5064E-01  
+VDS            -5.5064E-01  -5.5064E-01  
+VBS             0.0          0.0         
+VTH            -4.1503E-01  -4.1503E-01  
+VDSAT          -1.1833E-01  -1.1833E-01  
+GM              1.2173E-04   1.2173E-04  
+GDS             8.7826E-07   8.7826E-07  
+RON             1.1386E+06   1.1386E+06  
+GMB             3.7724E-05   3.7724E-05  
+Cdd             1.2050E-14   1.2050E-14  
+Cdg            -7.1987E-14  -7.1987E-14  
+Cds             7.9174E-14   7.9174E-14  
+Cdb            -1.9237E-14  -1.9237E-14  
+Cgd            -1.1799E-14  -1.1799E-14  
+Cgg             1.7360E-13   1.7360E-13  
+Cgs            -1.5712E-13  -1.5712E-13  
+Cgb            -4.6799E-15  -4.6799E-15  
+Csd            -1.2356E-16  -1.2356E-16  
+Csg            -7.1987E-14  -7.1987E-14  
+Css             9.1347E-14   9.1347E-14  
+Csb            -1.9237E-14  -1.9237E-14  
+Cbd            -1.2716E-16  -1.2716E-16  
+Cbg            -2.9624E-14  -2.9624E-14  
+Cbs            -1.3403E-14  -1.3403E-14  
+Cbb             4.3154E-14   4.3154E-14  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           1.3561E-01   1.3561E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 12 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           9.6812E-01  N2           2.7426E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         9.6812E-01  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.9314E-05   1.8000E+00  -3.4765E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  3.4765E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              9.6569E-06   9.6569E-06   1.9314E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             4.2574E-01   4.2574E-01   7.0000E-01  
+VDS             6.9386E-01   6.9386E-01   2.7426E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.9823E-01   4.9823E-01   4.3384E-01  
+VDSAT           4.0350E-02   4.0350E-02   1.5210E-01  
+GM              2.3097E-04   2.3097E-04   1.1310E-04  
+GDS             6.3838E-06   6.3838E-06   1.5708E-05  
+RON             1.5665E+05   1.5665E+05   6.3661E+04  
+GMB             6.0929E-05   6.0929E-05   3.0986E-05  
+Cdd             2.0163E-14   2.0163E-14   1.9016E-16  
+Cdg            -2.1366E-14  -2.1366E-14  -2.8542E-16  
+Cds             1.5515E-15   1.5515E-15   1.2594E-16  
+Cdb            -3.4785E-16  -3.4785E-16  -3.0677E-17  
+Cgd            -2.0110E-14  -2.0110E-14  -1.8765E-16  
+Cgg             5.0167E-14   5.0167E-14   6.2460E-16  
+Cgs            -2.2750E-14  -2.2750E-14  -4.2794E-16  
+Cgb            -7.3076E-15  -7.3076E-15  -9.0125E-18  
+Csd            -7.5298E-18  -7.5298E-18   8.7012E-19  
+Csg            -2.1366E-14  -2.1366E-14  -2.8542E-16  
+Css             2.1722E-14   2.1722E-14   3.1523E-16  
+Csb            -3.4785E-16  -3.4785E-16  -3.0677E-17  
+Cbd            -4.5412E-17  -4.5412E-17  -3.3773E-18  
+Cbg            -7.4348E-15  -7.4348E-15  -5.3756E-17  
+Cbs            -5.2310E-16  -5.2310E-16  -1.3233E-17  
+Cbb             8.0033E-15   8.0033E-15   7.0366E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         subthreshold subthreshold saturation   
+VTH_D          -7.2492E-02  -7.2492E-02   2.6616E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -9.6569E-06  -9.6569E-06  
+Ibd             1.6638E-12   1.6638E-12  
+Ibs             0.0          0.0         
+VGS            -8.3188E-01  -8.3188E-01  
+VDS            -8.3188E-01  -8.3188E-01  
+VBS             0.0          0.0         
+VTH            -4.2410E-01  -4.2410E-01  
+VDSAT          -2.9220E-01  -2.9220E-01  
+GM              4.3670E-05   4.3670E-05  
+GDS             1.6785E-06   1.6785E-06  
+RON             5.9577E+05   5.9577E+05  
+GMB             1.2940E-05   1.2940E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0621E-16   1.0621E-16  
+Cdb            -2.7516E-17  -2.7516E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9665E-16   4.9665E-16  
+Cgs            -3.5778E-16  -3.5778E-16  
+Cgb             6.0045E-18   6.0045E-18  
+Csd            -4.0534E-19  -4.0534E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5226E-16   2.5226E-16  
+Csb            -2.7516E-17  -2.7516E-17  
+Cbd            -3.6746E-19  -3.6746E-19  
+Cbg            -4.7965E-17  -4.7965E-17  
+Cbs            -6.9537E-19  -6.9537E-19  
+Cbb             4.9028E-17   4.9028E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           4.0778E-01   4.0778E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 13 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.4487E+00  N2           3.9216E-03  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.4487E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -5.9351E-07   1.8000E+00  -1.0683E-06  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  1.0683E-06 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              2.9652E-07   2.9652E-07   5.9304E-07  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             6.9608E-01   6.9608E-01   7.0000E-01  
+VDS             1.4447E+00   1.4447E+00   3.9216E-03  
+VBS             0.0          0.0          0.0         
+VTH             3.7036E-01   3.7036E-01   3.7374E-01  
+VDSAT           2.4008E-01   2.4008E-01   2.4134E-01  
+GM              1.8308E-06   1.8308E-06   1.9958E-06  
+GDS             2.8146E-09   2.8146E-09   1.4994E-04  
+RON             3.5529E+08   3.5529E+08   6.6691E+03  
+GMB             4.8567E-07   4.8567E-07   5.8931E-07  
+Cdd             1.8837E-16   1.8837E-16   2.4139E-13  
+Cdg            -6.1159E-15  -6.1159E-15  -3.0549E-13  
+Cds             7.8131E-15   7.8131E-15   1.5812E-13  
+Cdb            -1.8855E-15  -1.8855E-15  -9.4019E-14  
+Cgd            -1.8617E-16  -1.8617E-16  -2.7391E-13  
+Cgg             1.4852E-14   1.4852E-14   6.1423E-13  
+Cgs            -1.3825E-14  -1.3825E-14  -3.3874E-13  
+Cgb            -8.4119E-16  -8.4119E-16  -1.5821E-15  
+Csd            -9.1529E-19  -9.1529E-19   2.3244E-13  
+Csg            -6.1159E-15  -6.1159E-15  -3.0549E-13  
+Css             8.0024E-15   8.0024E-15   1.6707E-13  
+Csb            -1.8855E-15  -1.8855E-15  -9.4019E-14  
+Cbd            -1.2874E-18  -1.2874E-18  -1.9992E-13  
+Cbg            -2.6205E-15  -2.6205E-15  -3.2499E-15  
+Cbs            -1.9904E-15  -1.9904E-15   1.3551E-14  
+Cbb             4.6123E-15   4.6123E-15   1.8962E-13  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           3.2572E-01   3.2572E-01   3.2626E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -2.9652E-07  -2.9652E-07  
+Ibd             7.0268E-13   7.0268E-13  
+Ibs             0.0          0.0         
+VGS            -3.5134E-01  -3.5134E-01  
+VDS            -3.5134E-01  -3.5134E-01  
+VBS             0.0          0.0         
+VTH            -5.0979E-01  -5.0979E-01  
+VDSAT          -3.9821E-02  -3.9821E-02  
+GM              7.1783E-06   7.1783E-06  
+GDS             1.2438E-07   1.2438E-07  
+RON             8.0400E+06   8.0400E+06  
+GMB             2.3182E-06   2.3182E-06  
+Cdd             1.2833E-14   1.2833E-14  
+Cdg            -1.2945E-14  -1.2945E-14  
+Cds             1.5019E-16   1.5019E-16  
+Cdb            -3.8222E-17  -3.8222E-17  
+Cgd            -1.2818E-14  -1.2818E-14  
+Cgg             3.0844E-14   3.0844E-14  
+Cgs            -1.3249E-14  -1.3249E-14  
+Cgb            -4.7776E-15  -4.7776E-15  
+Csd            -2.8557E-19  -2.8557E-19  
+Csg            -1.2945E-14  -1.2945E-14  
+Css             1.2984E-14   1.2984E-14  
+Csb            -3.8222E-17  -3.8222E-17  
+Cbd            -1.4753E-17  -1.4753E-17  
+Cbg            -4.9543E-15  -4.9543E-15  
+Cbs             1.1508E-16   1.1508E-16  
+Cbb             4.8540E-15   4.8540E-15  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         subthreshold subthreshold 
+VTH_D          -1.5845E-01  -1.5845E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 14 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5352E-05   1.8000E+00  -2.7633E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7633E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 15 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 16 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 17 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 18 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 19 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 20 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 21 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 22 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 23 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 24 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+
+0************************************************************************************************************************
+
+
+run number 25 out of 25
+1************************************************************************************************************************
+
+*** DATE:  8-Dec-2021 16:28:57
+*** TITLE: .option compat
+
+TEMPERATURE : 25.000000 degrees C
+
+
+***>  8-Dec-2021 16:28:57 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+  NODE         VOLTAGE      NODE         VOLTAGE      NODE         VOLTAGE    
+N1           1.0147E+00  N2           1.4052E-01  VB           7.0000E-01  
+VDD          1.8000E+00  VINN         7.0000E-01  VINP         7.0000E-01  
+VOUT         1.0147E+00  
+
+
+   VOLTAGE SOURCE CURRENT
+
+NAME      CURRENT      VOLTAGE      POWER        
+V0         0.0          7.0000E-01   0.0         
+V1         0.0          7.0000E-01   0.0         
+V2        -1.5297E-05   1.8000E+00  -2.7535E-05  
+V3         0.0          7.0000E-01   0.0         
+
+   TOTAL POWER DISSIPATION:  2.7535E-05 WATTS
+
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+               M3           M4           M5           
+
+MODEL          CMOSN        CMOSN        CMOSN        
+MFACTOR         1.0000E+00   1.0000E+00   1.0000E+00  
+ID              7.6486E-06   7.6486E-06   1.5297E-05  
+Ibd             0.0          0.0          0.0         
+Ibs             0.0          0.0          0.0         
+VGS             5.5948E-01   5.5948E-01   7.0000E-01  
+VDS             8.7416E-01   8.7416E-01   1.4052E-01  
+VBS             0.0          0.0          0.0         
+VTH             4.2501E-01   4.2501E-01   4.3581E-01  
+VDSAT           1.0166E-01   1.0166E-01   1.5146E-01  
+GM              8.9277E-05   8.9277E-05   7.9870E-05  
+GDS             3.1339E-06   3.1339E-06   5.6156E-05  
+RON             3.1909E+05   3.1909E+05   1.7808E+04  
+GMB             2.4957E-05   2.4957E-05   2.2520E-05  
+Cdd             1.8795E-16   1.8795E-16   2.1016E-16  
+Cdg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Cds             1.2313E-16   1.2313E-16   1.1896E-16  
+Cdb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cgd            -1.8580E-16  -1.8580E-16  -2.0467E-16  
+Cgg             6.1934E-16   6.1934E-16   6.3337E-16  
+Cgs            -4.2092E-16  -4.2092E-16  -4.2164E-16  
+Cgb            -1.2620E-17  -1.2620E-17  -7.0600E-18  
+Csd            -1.3407E-18  -1.3407E-18   2.0866E-17  
+Csg            -2.8151E-16  -2.8151E-16  -2.9573E-16  
+Css             3.1242E-16   3.1242E-16   3.0825E-16  
+Csb            -2.9573E-17  -2.9573E-17  -3.3393E-17  
+Cbd            -8.0604E-19  -8.0604E-19  -2.6349E-17  
+Cbg            -5.6323E-17  -5.6323E-17  -4.1917E-17  
+Cbs            -1.4637E-17  -1.4637E-17  -5.5798E-18  
+Cbb             7.1766E-17   7.1766E-17   7.3846E-17  
+PHI             8.5885E-01   8.5885E-01   8.5885E-01  
+VBI             1.0154E+00   1.0154E+00   1.0154E+00  
+Region         saturation   saturation   linear       
+VTH_D           1.3447E-01   1.3447E-01   2.6419E-01  
+
+               M1           M2           
+
+MODEL          CMOSP        CMOSP        
+MFACTOR         1.0000E+00   1.0000E+00  
+ID             -7.6486E-06  -7.6486E-06  
+Ibd             1.5706E-12   1.5706E-12  
+Ibs             0.0          0.0         
+VGS            -7.8531E-01  -7.8531E-01  
+VDS            -7.8531E-01  -7.8531E-01  
+VBS             0.0          0.0         
+VTH            -4.2439E-01  -4.2439E-01  
+VDSAT          -2.6393E-01  -2.6393E-01  
+GM              3.9476E-05   3.9476E-05  
+GDS             1.4130E-06   1.4130E-06  
+RON             7.0773E+05   7.0773E+05  
+GMB             1.1872E-05   1.1872E-05  
+Cdd             1.4564E-16   1.4564E-16  
+Cdg            -2.2434E-16  -2.2434E-16  
+Cds             1.0622E-16   1.0622E-16  
+Cdb            -2.7521E-17  -2.7521E-17  
+Cgd            -1.4487E-16  -1.4487E-16  
+Cgg             4.9670E-16   4.9670E-16  
+Cgs            -3.5756E-16  -3.5756E-16  
+Cgb             5.7374E-18   5.7374E-18  
+Csd            -4.0528E-19  -4.0528E-19  
+Csg            -2.2434E-16  -2.2434E-16  
+Css             2.5227E-16   2.5227E-16  
+Csb            -2.7521E-17  -2.7521E-17  
+Cbd            -3.6752E-19  -3.6752E-19  
+Cbg            -4.8014E-17  -4.8014E-17  
+Cbs            -9.2449E-19  -9.2449E-19  
+Cbb             4.9306E-17   4.9306E-17  
+PHI             8.8827E-01   8.8827E-01  
+VBI             1.0301E+00   1.0301E+00  
+Region         saturation   saturation   
+VTH_D           3.6093E-01   3.6093E-01  
+
+
+***>  8-Dec-2021 16:28:57 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+1*************** 8-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************16:28:57*****************
+
+0.option compat
+0****                 ACCOUNTING INFORMATION                                 TEMPERATURE =   25.000 DEG C
+
+0*************************************************************************************************************************
+
+
+
+
+
+
+-----------| Simulated Design Summary |------------
+
+Detail about objects and nodes simulated:
+Number of nodes                     7
+Number of intrinsic nodes           0
+Number of input signals             4
+Number of resistors                 0
+Number of floating capacitors       0
+Number of grounded capacitors       1
+Number of inductors                 0
+Number of voltage sources           4
+Number of current sources           0
+Number of dependent sources         0
+Number of diodes                    0
+Number of BJT                       0
+Number of JFET                      0
+Number of MOS                       5
+Number of SWITCHES                  0
+Number of transmission lines        0
+Total number of elements simulated  10
+Repartition per level of MOS
+  BSIM3V3 5
+Number of equations                 11
+Number of non-zero terms            35
+Percent Zeros                      71.07
+Number of Newton iterations         1
+Number of AC points                 71
+Evaluation of active devices        21
+Virtual memory size (MB)            451
+Peak memory size (MB)      60
+---------------------------------------------------
+
+***>  8-Dec-2021 16:28:57 - GLOBAL CPU TIME 0s 070ms <***
+
+
+***>  8-Dec-2021 16:28:57 - GLOBAL WALL CLOCK ELAPSED TIME 1s <***
+
+
+  Job started at  8-Dec-2021 16:28:56
+  Job end at      8-Dec-2021 16:28:57
+
+  Run on vierre64.esat.kuleuven.be (Linux 4.18.0-348.2.1.el8_5.x86_64)
+
+-----------------------------------------
+Maximum number of license(s) consumed:
+   1 Analog Simulator Kernel (eldokernel)
+
+Time spent acquiring licenses: 0.042 s (avg: 0.021 s, max: 0.025 s at Wed Dec  8 16:28:57 2021)
+Time spent releasing licenses: 0.002 s (avg: 0.001 s, max: 0.001 s at Wed Dec  8 16:28:57 2021)
+-----------------------------------------
+
+Simulation Finished.

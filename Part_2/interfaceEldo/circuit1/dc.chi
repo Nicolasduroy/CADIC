@@ -1,28 +1,29 @@
-  Run on atlas.esat.kuleuven.be (Linux 3.10.0-1160.2.2.el7.x86_64)
+  Run on vierre64.esat.kuleuven.be (Linux 4.18.0-348.2.1.el8_5.x86_64)
 
+-----------| System Information |---------------
 
-***** SYSTEM INFORMATION ...
-
-*** User  : nxama
-*** OS    : \S [VCO = aol]
+*** User  : r0483515
+*** OS    : Rocky Linux release 8.5 (Green Obsidian) [VCO = aol]
 *** CPU   :
-    Intel(R) Xeon(R) CPU E3-1270 v5 @ 3.60GHz
-    Number of physical processors     : 1
-    Hyper-Threading Technology        : enabled
-    Number of cpu cores               : 4
-    Number of logical processors      : 8
-*** Freq  : 3779.516MHz
-*** Cache : 8192 KB
-*** MEM   : 32710532 kB
-*** Date  : Tue Nov 24 16:07:01 2020
+    AMD EPYC Processor
+    Number of physical processors     : 4
+    Hyper-Threading Technology        : disabled
+    Number of cpu cores               : 16
+    Number of logical processors      : 16
+*** Freq  : 2994.374MHz
+*** Cache : 512 KB
+*** MEM   : 65921092 kB
+*** Date  : Wed Dec  1 15:59:45 2021
 
-*** Eldo VERSION : ELDO 17.1 (64 bits) Thu Feb 23 16:45:37 GMT 2017
+*** Eldo VERSION : ELDO 2020.3 update1 (64 bits) Thu Aug 20 15:38:08 GMT 2020
 
-/esat/micas-data/software/ams_2017.1/aol/bin/eldo_64.exe -i interfaceEldo/circuit1/dc
+/esat/micas-data/software/Mentor/ams_2020.3/aol/bin/eldo_64.exe -i interfaceEldo/circuit1/dc
 
+
+***>  1-Dec-2021 15:59:45 - STARTING PARSING PHASE ...
 
 ***** PRE-PROCESSING ...
-1*******24-Nov-20 *******  ELDO 17.1 (64 bits)  (v8.4_1.1)  *******16:07:01******
+1******* 1-Dec-21 *******  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  *******15:59:45******
 
 0
 
@@ -41,20 +42,11 @@
    11  .DC data=list
    12  
    13  .DATA list X1 X2
-   14  + 8332.5132 1.6305e-09 
-   15  + 9152.1274 4.8824e-09 
-   16  + 2142.8813 4.8287e-09 
-   17  + 9220.3827 2.9415e-09 
-   18  + 6691.2332 4.2011e-09 
-   19  + 1877.8636 1.5675e-09 
-   20  + 3506.484 2.687e-09 
-   21  + 5921.9337 4.6629e-09 
-   22  + 9617.5615 4.1688e-09 
-   23  + 9683.9968 4.838e-09 
-   24  .ENDDATA
-   25  
-   26  .PRINTFILE dc v(vout) file=dcResult
-   27  .END
+   14  + 1 0.01 
+   15  .ENDDATA
+   16  
+   17  .PRINTFILE dc v(V0) file=dcResult
+   18  .END
 
 End of file 
 
@@ -63,27 +55,20 @@ End of file
 ***** 0  warning(s). 
 
 
-***** GENERATION ...
+***>  1-Dec-2021 15:59:45 - PARSING completed: WALL CLOCK ELAPSED TIME 0s <***
 
 
-***** 0  error(s). 
-***** 0  warning(s). 
+***>  1-Dec-2021 15:59:45 - STARTING ELABORATION PHASE ...
 
-
-INFORMATION ABOUT COMPILATION 
-
-Peak memory usage (MB): 36
-Virtual memory usage (MB): 379
+----------------| Design Summary |-----------------
 3 elements
 2 nodes 
-1 input signals
-Detail about objects and nodes found in the design, and simulated by Eldo:
+1 sources
+
+Detail about objects and nodes found in the design:
 Number of nodes                     2
-Number of intrinsic nodes           0
-Number of input signals             1
 Number of resistors                 1
-Number of floating capacitors       0
-Number of grounded capacitors       1
+Number of capacitors                1
 Number of inductors                 0
 Number of voltage sources           1
 Number of current sources           0
@@ -94,9 +79,24 @@ Number of JFET                      0
 Number of MOS                       0
 Number of SWITCHES                  0
 Number of transmission lines        0
-Total number of elements simulated  3
+Total number of elements            3
+---------------------------------------------------
+Warning 346: COMMAND ".PRINTFILE": node V0 undeclared.
+
+***** 0  error(s). 
+***** 1  warning(s). 
+
+
+------------| Elaboration Information |------------
+***> Memory:
+Peak memory usage (MB): 55
+Virtual memory usage (MB): 449
+
+***> Inputs:
+1 input signals
+---------------------------------------------------
 Note 108: Acquiring license Analog Simulator Kernel (eldokernel)
-*** DATE: 24-Nov-2020 16:07:01
+*** DATE:  1-Dec-2021 15:59:45
 *** TITLE: NO_TITLE
 
 TEMPERATURE : 27.000000 degrees C
@@ -104,7 +104,7 @@ TEMPERATURE : 27.000000 degrees C
 
 
 
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:01*****************
+1*************** 1-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************15:59:45*****************
 
 0NO_TITLE
 0****                 OPTION SUMMARY                                         TEMPERATURE =   27.000 DEG C
@@ -148,6 +148,7 @@ LIMRMOS        = UNDEF    SHRINK         = 1.00e+00
 
 *** General Information Options : 
 
+TUNING         = UNDEF    
 CPTIME         = UNDEF    STAT           = 0        TIMEDIV        = 0        
 SIMUDIV        = 10       SAVETIME       = 0        MAXTRAN        = 1000     
 MAXNODES       = 10000    MAXV           = 1.00e+13 LIMPROBE       = 10000    
@@ -173,9 +174,19 @@ TIMING         = 0        MODWL          = 1        ULOGIC         = 0
 
 
 
+***>  1-Dec-2021 15:59:45 - ELABORATION completed: WALL CLOCK ELAPSED TIME 0s <***
 
 
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:01*****************
+***>  1-Dec-2021 15:59:45 - STARTING SIMULATION PHASE ...
+DC algorithm: trying Fixed Gmin
+*    X1 = 1.000000E+00, X2 = 1.000000E-02          :100.00%
+
+***>  1-Dec-2021 15:59:45 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
+
+
+
+
+1*************** 1-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************15:59:45*****************
 
 0NO_TITLE
 0****                 ACCOUNTING INFORMATION                                 TEMPERATURE =   27.000 DEG C
@@ -186,6 +197,10 @@ TIMING         = 0        MODWL          = 1        ULOGIC         = 0
 
 
 
+
+-----------| Simulated Design Summary |------------
+
+Detail about objects and nodes simulated:
 Number of nodes                     2
 Number of intrinsic nodes           0
 Number of input signals             1
@@ -206,31 +221,32 @@ Total number of elements simulated  3
 Number of equations                 1
 Number of non-zero terms            1
 Percent Zeros                          0
-Number of DC points                 10
-Number of Newton iterations         11
-Average number of Newton iterations 1.100e+00
+Number of DC points                 1
+Number of Newton iterations         2
+Average number of Newton iterations 2.000e+00
 Evaluation of active devices        0
-Virtual memory size (MB)            380
-Peak memory size (MB)      39
+Virtual memory size (MB)            448
+Peak memory size (MB)      59
+---------------------------------------------------
+***>MESSAGE SUMMARY: 1 warning
 
-***>CPU TIME 0s 000ms <***
-
-
-***>GLOBAL CPU TIME 0s 030ms <***
-
-
-***>GLOBAL ELAPSED TIME 0s <***
+***>  1-Dec-2021 15:59:45 - GLOBAL CPU TIME 0s 040ms <***
 
 
-  Job started at 24-Nov-2020 16:07:01
-  Job end at     24-Nov-2020 16:07:01
+***>  1-Dec-2021 15:59:45 - GLOBAL WALL CLOCK ELAPSED TIME 0s <***
 
-  Run on atlas.esat.kuleuven.be (Linux 3.10.0-1160.2.2.el7.x86_64)
+
+  Job started at  1-Dec-2021 15:59:45
+  Job end at      1-Dec-2021 15:59:45
+
+  Run on vierre64.esat.kuleuven.be (Linux 4.18.0-348.2.1.el8_5.x86_64)
 
 -----------------------------------------
 Maximum number of license(s) consumed:
    1 Analog Simulator Kernel (eldokernel)
 
-Time spent acquiring licenses: 0.029260 s (avg: 0.029260 s, max: 0.029260 s at Tue Nov 24 16:07:01 2020)
-Time spent releasing licenses: 0.000881 s (avg: 0.000881 s, max: 0.000881 s at Tue Nov 24 16:07:01 2020)
+Time spent acquiring licenses: 0.024 s (avg: 0.024 s, max: 0.024 s at Wed Dec  1 15:59:45 2021)
+Time spent releasing licenses: 0.001 s (avg: 0.001 s, max: 0.001 s at Wed Dec  1 15:59:45 2021)
 -----------------------------------------
+
+Simulation Finished.

@@ -1,0 +1,9 @@
+START report: Wed Dec  1 17:57:40 2021 
+** Warning: (eldo-114)   NODE "VINN": Second input signal ignored on that node
+** Warning: (eldo-114)   NODE "VINP": Second input signal ignored on that node
+** Error: (eldo-27)   Inductor/'voltage source' loop found
++   Voltage loop  made of 0 voltage sources only can be accepted using .OPTION LOOPV0
++   To downgrade this error to a warning  use .OPTION VOLTAGE_LOOP_SEVERITY = WARNING
+** Error: (eldo-27)   Inductor/'voltage source' loop found
++   Voltage loop  made of 0 voltage sources only can be accepted using .OPTION LOOPV0
++   To downgrade this error to a warning  use .OPTION VOLTAGE_LOOP_SEVERITY = WARNING

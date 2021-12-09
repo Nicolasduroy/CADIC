@@ -1,28 +1,29 @@
-  Run on atlas.esat.kuleuven.be (Linux 3.10.0-1160.2.2.el7.x86_64)
+  Run on vierre64.esat.kuleuven.be (Linux 4.18.0-348.2.1.el8_5.x86_64)
 
+-----------| System Information |---------------
 
-***** SYSTEM INFORMATION ...
-
-*** User  : nxama
-*** OS    : \S [VCO = aol]
+*** User  : r0483515
+*** OS    : Rocky Linux release 8.5 (Green Obsidian) [VCO = aol]
 *** CPU   :
-    Intel(R) Xeon(R) CPU E3-1270 v5 @ 3.60GHz
-    Number of physical processors     : 1
-    Hyper-Threading Technology        : enabled
-    Number of cpu cores               : 4
-    Number of logical processors      : 8
-*** Freq  : 3780.395MHz
-*** Cache : 8192 KB
-*** MEM   : 32710532 kB
-*** Date  : Tue Nov 24 16:07:02 2020
+    AMD EPYC Processor
+    Number of physical processors     : 4
+    Hyper-Threading Technology        : disabled
+    Number of cpu cores               : 16
+    Number of logical processors      : 16
+*** Freq  : 2994.374MHz
+*** Cache : 512 KB
+*** MEM   : 65921092 kB
+*** Date  : Wed Dec  1 15:59:46 2021
 
-*** Eldo VERSION : ELDO 17.1 (64 bits) Thu Feb 23 16:45:37 GMT 2017
+*** Eldo VERSION : ELDO 2020.3 update1 (64 bits) Thu Aug 20 15:38:08 GMT 2020
 
-/esat/micas-data/software/ams_2017.1/aol/bin/eldo_64.exe -i interfaceEldo/circuit1/ac
+/esat/micas-data/software/Mentor/ams_2020.3/aol/bin/eldo_64.exe -i interfaceEldo/circuit1/ac
 
+
+***>  1-Dec-2021 15:59:46 - STARTING PARSING PHASE ...
 
 ***** PRE-PROCESSING ...
-1*******24-Nov-20 *******  ELDO 17.1 (64 bits)  (v8.4_1.1)  *******16:07:02******
+1******* 1-Dec-21 *******  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  *******15:59:46******
 
 0
 
@@ -41,20 +42,11 @@
    11  .AC dec 10 100 1G data=list
    12  
    13  .DATA list X1 X2
-   14  + 8332.5132 1.6305e-09 
-   15  + 9152.1274 4.8824e-09 
-   16  + 2142.8813 4.8287e-09 
-   17  + 9220.3827 2.9415e-09 
-   18  + 6691.2332 4.2011e-09 
-   19  + 1877.8636 1.5675e-09 
-   20  + 3506.484 2.687e-09 
-   21  + 5921.9337 4.6629e-09 
-   22  + 9617.5615 4.1688e-09 
-   23  + 9683.9968 4.838e-09 
-   24  .ENDDATA
-   25  
-   26  .PRINTFILE ac v(vout) file=acResult
-   27  .END
+   14  + 1 0.01 
+   15  .ENDDATA
+   16  
+   17  .PRINTFILE ac v(vout) file=acResult
+   18  .END
 
 End of file 
 
@@ -63,27 +55,20 @@ End of file
 ***** 0  warning(s). 
 
 
-***** GENERATION ...
+***>  1-Dec-2021 15:59:46 - PARSING completed: WALL CLOCK ELAPSED TIME 0s <***
 
 
-***** 0  error(s). 
-***** 0  warning(s). 
+***>  1-Dec-2021 15:59:46 - STARTING ELABORATION PHASE ...
 
-
-INFORMATION ABOUT COMPILATION 
-
-Peak memory usage (MB): 36
-Virtual memory usage (MB): 379
+----------------| Design Summary |-----------------
 3 elements
 2 nodes 
-1 input signals
-Detail about objects and nodes found in the design, and simulated by Eldo:
+1 sources
+
+Detail about objects and nodes found in the design:
 Number of nodes                     2
-Number of intrinsic nodes           0
-Number of input signals             1
 Number of resistors                 1
-Number of floating capacitors       0
-Number of grounded capacitors       1
+Number of capacitors                1
 Number of inductors                 0
 Number of voltage sources           1
 Number of current sources           0
@@ -94,19 +79,33 @@ Number of JFET                      0
 Number of MOS                       0
 Number of SWITCHES                  0
 Number of transmission lines        0
-Total number of elements simulated  3
+Total number of elements            3
+---------------------------------------------------
+
+***** 0  error(s). 
+***** 0  warning(s). 
+
+
+------------| Elaboration Information |------------
+***> Memory:
+Peak memory usage (MB): 55
+Virtual memory usage (MB): 449
+
+***> Inputs:
+1 input signals
+---------------------------------------------------
 Note 108: Acquiring license Analog Simulator Kernel (eldokernel)
 
 
 0************************************************************************************************************************
 
 
-run number 1 out of 10
-   value of parameter X1 is 8.332513E+03
-   value of parameter X2 is 1.630500E-09
+run number 1 out of 1
+   value of parameter X1 is 1.000000
+   value of parameter X2 is 0.010000
 1************************************************************************************************************************
 
-*** DATE: 24-Nov-2020 16:07:02
+*** DATE:  1-Dec-2021 15:59:46
 *** TITLE: NO_TITLE
 
 TEMPERATURE : 27.000000 degrees C
@@ -114,7 +113,7 @@ TEMPERATURE : 27.000000 degrees C
 
 
 
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
+1*************** 1-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************15:59:46*****************
 
 0NO_TITLE
 0****                 OPTION SUMMARY                                         TEMPERATURE =   27.000 DEG C
@@ -158,6 +157,7 @@ LIMRMOS        = UNDEF    SHRINK         = 1.00e+00
 
 *** General Information Options : 
 
+TUNING         = UNDEF    
 CPTIME         = UNDEF    STAT           = 0        TIMEDIV        = 0        
 SIMUDIV        = 10       SAVETIME       = 0        MAXTRAN        = 1000     
 MAXNODES       = 10000    MAXV           = 1.00e+13 LIMPROBE       = 10000    
@@ -183,82 +183,18 @@ TIMING         = 0        MODWL          = 1        ULOGIC         = 0
 
 
 
-***> DC CPU TIME 0s 000ms <***
-
-DC:1 iterations FOR DC analysis
+***>  1-Dec-2021 15:59:46 - ELABORATION completed: WALL CLOCK ELAPSED TIME 0s <***
 
 
+***>  1-Dec-2021 15:59:46 - STARTING SIMULATION PHASE ...
 
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-  NODE         VOLTAGE      NODE         VOLTAGE    
-VIN          0.0         VOUT         0.0         
-
-
-   VOLTAGE SOURCE CURRENT
-
-NAME      CURRENT      VOLTAGE      POWER        
-V0         0.0          0.0          0.0         
-
-   TOTAL POWER DISSIPATION:  0.0        WATTS
+***>  1-Dec-2021 15:59:46 - DC completed: TOTAL WALL CLOCK ELAPSED TIME 0s <***
 
 
 
 
 
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-               R01          
-V+              0.0         
-V-              0.0         
-ID              0.0         
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-0************************************************************************************************************************
-
-
-run number 2 out of 10
-   value of parameter X1 is 9.152127E+03
-   value of parameter X2 is 4.882400E-09
-1************************************************************************************************************************
-
-*** DATE: 24-Nov-2020 16:07:02
-*** TITLE: NO_TITLE
-
-TEMPERATURE : 27.000000 degrees C
-
-
-***> DC CPU TIME 0s 000ms <***
-
-DC:1 iterations FOR DC analysis
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
+1*************** 1-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************15:59:46*****************
 
 0NO_TITLE
 0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   27.000 DEG C
@@ -281,7 +217,7 @@ V0         0.0          0.0          0.0
 
 
 
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
+1*************** 1-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************15:59:46*****************
 
 0NO_TITLE
 0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
@@ -295,556 +231,12 @@ V-              0.0
 ID              0.0         
 
 
-***>CPU TIME 0s 000ms <***
+***>  1-Dec-2021 15:59:46 - AC completed: WALL CLOCK ELAPSED TIME 0s <***
 
 
 
 
-
-***>CPU TIME 0s 000ms <***
-
-
-
-0************************************************************************************************************************
-
-
-run number 3 out of 10
-   value of parameter X1 is 2.142881E+03
-   value of parameter X2 is 4.828700E-09
-1************************************************************************************************************************
-
-*** DATE: 24-Nov-2020 16:07:02
-*** TITLE: NO_TITLE
-
-TEMPERATURE : 27.000000 degrees C
-
-
-***> DC CPU TIME 0s 000ms <***
-
-DC:1 iterations FOR DC analysis
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-  NODE         VOLTAGE      NODE         VOLTAGE    
-VIN          0.0         VOUT         0.0         
-
-
-   VOLTAGE SOURCE CURRENT
-
-NAME      CURRENT      VOLTAGE      POWER        
-V0         0.0          0.0          0.0         
-
-   TOTAL POWER DISSIPATION:  0.0        WATTS
-
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-               R01          
-V+              0.0         
-V-              0.0         
-ID              0.0         
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-0************************************************************************************************************************
-
-
-run number 4 out of 10
-   value of parameter X1 is 9.220383E+03
-   value of parameter X2 is 2.941500E-09
-1************************************************************************************************************************
-
-*** DATE: 24-Nov-2020 16:07:02
-*** TITLE: NO_TITLE
-
-TEMPERATURE : 27.000000 degrees C
-
-
-***> DC CPU TIME 0s 000ms <***
-
-DC:1 iterations FOR DC analysis
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-  NODE         VOLTAGE      NODE         VOLTAGE    
-VIN          0.0         VOUT         0.0         
-
-
-   VOLTAGE SOURCE CURRENT
-
-NAME      CURRENT      VOLTAGE      POWER        
-V0         0.0          0.0          0.0         
-
-   TOTAL POWER DISSIPATION:  0.0        WATTS
-
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-               R01          
-V+              0.0         
-V-              0.0         
-ID              0.0         
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-0************************************************************************************************************************
-
-
-run number 5 out of 10
-   value of parameter X1 is 6.691233E+03
-   value of parameter X2 is 4.201100E-09
-1************************************************************************************************************************
-
-*** DATE: 24-Nov-2020 16:07:02
-*** TITLE: NO_TITLE
-
-TEMPERATURE : 27.000000 degrees C
-
-
-***> DC CPU TIME 0s 000ms <***
-
-DC:1 iterations FOR DC analysis
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-  NODE         VOLTAGE      NODE         VOLTAGE    
-VIN          0.0         VOUT         0.0         
-
-
-   VOLTAGE SOURCE CURRENT
-
-NAME      CURRENT      VOLTAGE      POWER        
-V0         0.0          0.0          0.0         
-
-   TOTAL POWER DISSIPATION:  0.0        WATTS
-
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-               R01          
-V+              0.0         
-V-              0.0         
-ID              0.0         
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-0************************************************************************************************************************
-
-
-run number 6 out of 10
-   value of parameter X1 is 1.877864E+03
-   value of parameter X2 is 1.567500E-09
-1************************************************************************************************************************
-
-*** DATE: 24-Nov-2020 16:07:02
-*** TITLE: NO_TITLE
-
-TEMPERATURE : 27.000000 degrees C
-
-
-***> DC CPU TIME 0s 000ms <***
-
-DC:1 iterations FOR DC analysis
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-  NODE         VOLTAGE      NODE         VOLTAGE    
-VIN          0.0         VOUT         0.0         
-
-
-   VOLTAGE SOURCE CURRENT
-
-NAME      CURRENT      VOLTAGE      POWER        
-V0         0.0          0.0          0.0         
-
-   TOTAL POWER DISSIPATION:  0.0        WATTS
-
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-               R01          
-V+              0.0         
-V-              0.0         
-ID              0.0         
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-0************************************************************************************************************************
-
-
-run number 7 out of 10
-   value of parameter X1 is 3.506484E+03
-   value of parameter X2 is 2.687000E-09
-1************************************************************************************************************************
-
-*** DATE: 24-Nov-2020 16:07:02
-*** TITLE: NO_TITLE
-
-TEMPERATURE : 27.000000 degrees C
-
-
-***> DC CPU TIME 0s 000ms <***
-
-DC:1 iterations FOR DC analysis
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-  NODE         VOLTAGE      NODE         VOLTAGE    
-VIN          0.0         VOUT         0.0         
-
-
-   VOLTAGE SOURCE CURRENT
-
-NAME      CURRENT      VOLTAGE      POWER        
-V0         0.0          0.0          0.0         
-
-   TOTAL POWER DISSIPATION:  0.0        WATTS
-
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-               R01          
-V+              0.0         
-V-              0.0         
-ID              0.0         
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-0************************************************************************************************************************
-
-
-run number 8 out of 10
-   value of parameter X1 is 5.921934E+03
-   value of parameter X2 is 4.662900E-09
-1************************************************************************************************************************
-
-*** DATE: 24-Nov-2020 16:07:02
-*** TITLE: NO_TITLE
-
-TEMPERATURE : 27.000000 degrees C
-
-
-***> DC CPU TIME 0s 000ms <***
-
-DC:1 iterations FOR DC analysis
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-  NODE         VOLTAGE      NODE         VOLTAGE    
-VIN          0.0         VOUT         0.0         
-
-
-   VOLTAGE SOURCE CURRENT
-
-NAME      CURRENT      VOLTAGE      POWER        
-V0         0.0          0.0          0.0         
-
-   TOTAL POWER DISSIPATION:  0.0        WATTS
-
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-               R01          
-V+              0.0         
-V-              0.0         
-ID              0.0         
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-0************************************************************************************************************************
-
-
-run number 9 out of 10
-   value of parameter X1 is 9.617561E+03
-   value of parameter X2 is 4.168800E-09
-1************************************************************************************************************************
-
-*** DATE: 24-Nov-2020 16:07:02
-*** TITLE: NO_TITLE
-
-TEMPERATURE : 27.000000 degrees C
-
-
-***> DC CPU TIME 0s 000ms <***
-
-DC:1 iterations FOR DC analysis
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-  NODE         VOLTAGE      NODE         VOLTAGE    
-VIN          0.0         VOUT         0.0         
-
-
-   VOLTAGE SOURCE CURRENT
-
-NAME      CURRENT      VOLTAGE      POWER        
-V0         0.0          0.0          0.0         
-
-   TOTAL POWER DISSIPATION:  0.0        WATTS
-
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-               R01          
-V+              0.0         
-V-              0.0         
-ID              0.0         
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-0************************************************************************************************************************
-
-
-run number 10 out of 10
-   value of parameter X1 is 9.683997E+03
-   value of parameter X2 is 4.838000E-09
-1************************************************************************************************************************
-
-*** DATE: 24-Nov-2020 16:07:02
-*** TITLE: NO_TITLE
-
-TEMPERATURE : 27.000000 degrees C
-
-
-***> DC CPU TIME 0s 000ms <***
-
-DC:1 iterations FOR DC analysis
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 SMALL SIGNAL BIAS SOLUTION                           TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-  NODE         VOLTAGE      NODE         VOLTAGE    
-VIN          0.0         VOUT         0.0         
-
-
-   VOLTAGE SOURCE CURRENT
-
-NAME      CURRENT      VOLTAGE      POWER        
-V0         0.0          0.0          0.0         
-
-   TOTAL POWER DISSIPATION:  0.0        WATTS
-
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
-
-0NO_TITLE
-0****                 OPERATING POINT INFORMATION                          TEMPERATURE =   27.000 DEG C
-
-0*************************************************************************************************************************
-
-
-               R01          
-V+              0.0         
-V-              0.0         
-ID              0.0         
-
-
-***>CPU TIME 0s 000ms <***
-
-
-
-
-1***************24-Nov-2020 ***********************  ELDO 17.1 (64 bits)  (v8.4_1.1)  ***********************16:07:02*****************
+1*************** 1-Dec-2021 ***********************  ELDO 2020.3 update1 (64 bits)  (v20.3_1.1)  ***********************15:59:46*****************
 
 0NO_TITLE
 0****                 ACCOUNTING INFORMATION                                 TEMPERATURE =   27.000 DEG C
@@ -855,6 +247,10 @@ ID              0.0
 
 
 
+
+-----------| Simulated Design Summary |------------
+
+Detail about objects and nodes simulated:
 Number of nodes                     2
 Number of intrinsic nodes           0
 Number of input signals             1
@@ -878,27 +274,27 @@ Percent Zeros                          0
 Number of Newton iterations         1
 Number of AC points                 71
 Evaluation of active devices        0
-Virtual memory size (MB)            380
-Peak memory size (MB)      39
+Virtual memory size (MB)            448
+Peak memory size (MB)      59
+---------------------------------------------------
 
-***>CPU TIME 0s 000ms <***
-
-
-***>GLOBAL CPU TIME 0s 040ms <***
+***>  1-Dec-2021 15:59:46 - GLOBAL CPU TIME 0s 030ms <***
 
 
-***>GLOBAL ELAPSED TIME 0s <***
+***>  1-Dec-2021 15:59:46 - GLOBAL WALL CLOCK ELAPSED TIME 0s <***
 
 
-  Job started at 24-Nov-2020 16:07:02
-  Job end at     24-Nov-2020 16:07:02
+  Job started at  1-Dec-2021 15:59:46
+  Job end at      1-Dec-2021 15:59:46
 
-  Run on atlas.esat.kuleuven.be (Linux 3.10.0-1160.2.2.el7.x86_64)
+  Run on vierre64.esat.kuleuven.be (Linux 4.18.0-348.2.1.el8_5.x86_64)
 
 -----------------------------------------
 Maximum number of license(s) consumed:
    1 Analog Simulator Kernel (eldokernel)
 
-Time spent acquiring licenses: 0.024358 s (avg: 0.024358 s, max: 0.024358 s at Tue Nov 24 16:07:02 2020)
-Time spent releasing licenses: 0.000761 s (avg: 0.000761 s, max: 0.000761 s at Tue Nov 24 16:07:02 2020)
+Time spent acquiring licenses: 0.023 s (avg: 0.023 s, max: 0.023 s at Wed Dec  1 15:59:46 2021)
+Time spent releasing licenses: 0.001 s (avg: 0.001 s, max: 0.001 s at Wed Dec  1 15:59:46 2021)
 -----------------------------------------
+
+Simulation Finished.
