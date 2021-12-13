@@ -84,9 +84,15 @@ function [flag,fitness,q,m,crowdmax,max_crowd] = stopCriterion(population,V,M,fi
 
 
 % %%
+<<<<<<< HEAD
 %      if it > 100 % still a time limit to be sure that we don't run indefinitly. 
 %          flag = 0;
 %      end
+=======
+      if it > 300 % still a time limit to be sure that we don't run indefinitly. 
+          flag = 0;
+      end
+>>>>>>> 653137422dc487acfcc82e3ca24f852d1fccc55e
 % % pareto = population(:,end-1)~=1;
 % % pareto = sum(pareto);
 % % if ~pareto
@@ -107,7 +113,11 @@ end
 
 m = mean(abs(fitness_previous-fitness));
 
+<<<<<<< HEAD
 q = mean(abs(fitness_previous-fitness))/fitness
+=======
+q = mean(abs(fitness_previous-fitness))/abs(fitness);
+>>>>>>> 653137422dc487acfcc82e3ca24f852d1fccc55e
 
 crowd = 0 ;
 for i = 1 : size(population,1)
@@ -118,7 +128,11 @@ for i = 1 : size(population,1)
         end 
     end 
 end 
+<<<<<<< HEAD
 crowdmax = max(crowd)/mean(crowd)
+=======
+crowdmax = max(crowd)/mean(crowd);
+>>>>>>> 653137422dc487acfcc82e3ca24f852d1fccc55e
 max_crowd = max(crowd);
 % if max_previous == 0
 %     
@@ -129,7 +143,11 @@ max_crowd = max(crowd);
 %     crowdmax = abs(max_previous -max(crowd))/max_previous;
 
 
+<<<<<<< HEAD
  if q < 0.1 && crowdmax < 2 %  0.1 & 1.8 was 0.07 for my GA  bad values but did al testing like this. 
+=======
+ if q < 0.7 && crowdmax < 5 % 0.07 en 2 
+>>>>>>> 653137422dc487acfcc82e3ca24f852d1fccc55e
     flag = 0;
  end 
 

@@ -1,0 +1,32 @@
+.option compat
+.lib model
+
+.global 0 
+
+.param XWM=0.000003 XLM=0.000001 XWin=0.000003 XLin=0.000000360 XWb=0.000002 XLb=0.000000180
+
+
+C01 vout 0 5p
+
+m1 n1 n1 vdd vdd CMOSP w='XWM' l='XLM'
+
+m2 vout n1 vdd vdd CMOSP w='XWM' l='XLM'
+
+m3 n1 vinp n2 n2 CMOSN w='XWin' l='XLin'
+m4 vout vinn n2 n2 CMOSN w='Xwin' l='XLin'  
+
+m5 n2 vb 0 0 CMOSN w='XWb' l='XLb'
+
+
+V0 vinn 0 ac 1 dc 0.7
+V1 vinp 0 ac 1 dc 0.7
+V2 vdd 0 dc 1.8
+V3 vb 0 dc 0.7
+
+.ac dec 10 100 1G data=list
+
+.data list XWM XLM XWin XLin XWb XLb
+xxPARAMxx
+.enddata
+
+.printfile ac v(vout) file=acResult

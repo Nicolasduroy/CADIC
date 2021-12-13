@@ -3,7 +3,10 @@ function evalpopulation = evaluatePopulation(population,f,N,V,M,lb,ub)
 	% Take only the variables from old population and append to
 	% evalpopulation, while appending evalueted values at the end
 
+
     pop_temp = zeros(size(population,1),V);
+
+
 	 for i = 1:N
          population_temp = [];
        for j = 1:V 
@@ -14,5 +17,7 @@ function evalpopulation = evaluatePopulation(population,f,N,V,M,lb,ub)
     %lb && ub
 	% Calculate objectives here
     p = f(pop_temp);
-	evalpopulation = [population, p];
+
+	evalpopulation = [population,p];
+
 end

@@ -84,9 +84,9 @@ function [flag,fitness,q,m,crowdmax,max_crowd] = stopCriterion(population,V,M,fi
 
 
 % %%
-%      if it > 100 % still a time limit to be sure that we don't run indefinitly. 
-%          flag = 0;
-%      end
+      if it > 300 % still a time limit to be sure that we don't run indefinitly. 
+          flag = 0;
+      end
 % % pareto = population(:,end-1)~=1;
 % % pareto = sum(pareto);
 % % if ~pareto

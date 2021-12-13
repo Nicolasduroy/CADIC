@@ -1,0 +1,22 @@
+START report: Wed Dec  8 16:28:56 2021 
+** Warning: (eldo-220)  In file "./interfaceEldo/differential_pair/tran" line 19:
++    OBJECT "V1": Default values used for time specification : parameter TFALL set to  1ns.
+** Warning: (eldo-220)  In file "./interfaceEldo/differential_pair/tran" line 19:
++    OBJECT "V1": Default values used for time specification : parameter TSAMPLE set to  1000ns.
+** Warning: (eldo-220)  In file "./interfaceEldo/differential_pair/tran" line 19:
++    OBJECT "V1": Default values used for time specification.
+** Warning: (eldo-107)  NODE "VIN": Less than two connections.
+** Warning: (eldo-148)  NODE "VIN": No DC path to ground: adding GMIN between node and GROUND.
+** Warning: (eldo-107)  NODE "VINP": Less than two connections.
+** Warning: (eldo-148)  NODE "VINP": No DC path to ground: adding GMIN between node and GROUND.
+** Warning: (eldo-107)  NODE "VINN": Less than two connections.
+** Warning: (eldo-148)  NODE "VINN": No DC path to ground: adding GMIN between node and GROUND.
+** Warning: (eldo-29)  Such messages will not be displayed in future. Set .option MSGNODE = 0 to receive all such warnings.
+** Warning: (eldo-148)  NODE "VB": No DC path to ground: adding GMIN between node and GROUND.
+** Warning: (eldo-108)  NODE "VB": This node is a floating gate. List of MOS devices connected to that node follows:
++   --> M5
+** Warning: (eldo-108)  NODE "VINN": This node is a floating gate. List of MOS devices connected to that node follows:
++   --> M4
+** Warning: (eldo-108)  NODE "VINP": This node is a floating gate. List of MOS devices connected to that node follows:
++   --> M3
+** Warning: (eldo-29)   Such messages will not be displayed in future. Set .option MSGNODE = 0 to receive all such warnings.

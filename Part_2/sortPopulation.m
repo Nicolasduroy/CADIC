@@ -1,4 +1,7 @@
+
 function sorted = sortPopulation(unsorted,V,M,no_same)
+
+
 
 if (M==1) % Single Objective   %  so we crop the useless ones
 	%sorted = sort(unsorted);
@@ -31,6 +34,7 @@ else % Multi-objective case : non-domination sorting
                 for q = 1:M
                     if objectives(k,q) > objectives(j,q)
                            domed = true;
+
                     elseif objectives(k,q) < objectives(j,q)
                         domin = true;
                     end
@@ -76,19 +80,21 @@ else % Multi-objective case : non-domination sorting
     end
     
 
+
     %% Crowding Distance
 	
 % only compare each of same rank 
 % start with looking for max and min for each rank and give them CD =
 % infinity. 
  % compare resting elements and give them a value based on.
-  N = size(objectives,1);
+ N = size(objectives,1);
  distance = zeros(N,1);
  ranks = max(rank);
  l=1;
  totindices = [];
  for k = 1:ranks
      rankindices = [];
+
      while(rank(indices(l))==k)
         rankindices = [rankindices indices(l)];
         l = l+1;
@@ -96,6 +102,7 @@ else % Multi-objective case : non-domination sorting
             break;
         end
      end 
+
      for m = 1:M
         unsortedrank = objectives(rankindices,m);
         [~, indexsort] = sort(unsortedrank);
@@ -110,6 +117,8 @@ else % Multi-objective case : non-domination sorting
             distance(rankindices(r)) = distance(rankindices(r))+dist; 
         end
      end
+
+       
  end
 
  totrankindices = [];
@@ -160,9 +169,13 @@ if no_same < 0.3
 end 
         
 
+
  unsorted = cat(2,unsorted,rank);
  unsorted = cat(2,unsorted,distance);
  
  sorted = unsorted(totrankindices,:);
+
  end
+
+    end
 end

@@ -1,21 +1,6 @@
-<<<<<<< HEAD
-function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub)
-
-	children = zeros(NC,V);
-    even = mod(NC/2,2);
-    if even ~= 0
-        children(ceil(NC/2),:)= parents(1,1:V);
-        children(ceil(NC/2),2)= 1-parents(1,2);
-        children(ceil(NC/2),4)= 1-parents(1,4);
-    end 
-
-
-	for child = 1:(NC/2)
-=======
 function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta)
 	children = zeros(NC,V);
 	for child = 1:NC/2
->>>>>>> 653137422dc487acfcc82e3ca24f852d1fccc55e
 		if rand<P
 			% Do recombination %% make 2 childs form 2  parents. %% also insert
             % mutation here 
@@ -33,35 +18,12 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta)
 %             
             %%% uniform cross over 
             
-             p = randperm(size(parents,1),2);
+             p = randperm(size(parents,),2);
              
             for v = 1:V
                 x =rand;
                 if x <0.5
                     children(child,v)= parents(p(1),v);
-<<<<<<< HEAD
-                    children(end-child+1,v)= parents(p(2),v);
-                else
-                    children(child,v)= parents(p(2),v);
-                    children(end-child+1,v)= parents(p(1),v);
-                end 
-            end
-             x = rand;
-             z = randperm(V,1);   
-             children(child,z) =children(child,z)*(1-(x-1)*0.2);
-             children(end-child+1,z) = children(end -child+1,z)*(1-(x-1)*0.2);
-             if x <0.3
-               
-                z = randperm(V,1);   
-                children(child,z) =x;
-                children(end-child+1,z) = x;
-             end 
-   
-
-            %% cyclic cross over ?? 
-            
-            
-=======
                     children(child+1,v)= parents(p(2),v); 
                 else
                     children(child,v)= parents(p(2),v);
@@ -76,23 +38,14 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta)
 %                 children(child,v) = c1;
 %                 children(child+1,v) = c2;
 %             end
->>>>>>> 653137422dc487acfcc82e3ca24f852d1fccc55e
             
           
         else
             l = randperm(size(parents,1),1);
             children(child,:)= parents(l,(1:V));
-<<<<<<< HEAD
-            children(end-child+1,:)= parents(l,(1:V));
             x = rand;
             z = randperm(V,1);   
             children(child,z) = children(child,z)*(1-(x-1)*0.2);
-            children(end-child+1,z) = children(end -child+1,z)*(1-(x-1)*0.2);
-=======
-            x = rand;
-            z = randperm(V,1);   
-            children(child,z) = children(child,z)*(1-(x-1)*0.2);
->>>>>>> 653137422dc487acfcc82e3ca24f852d1fccc55e
 		end
 	end
 	

@@ -14,5 +14,5 @@ function evalpopulation = evaluatePopulation(population,f,N,V,M,lb,ub)
     %lb && ub
 	% Calculate objectives here
     p = f(pop_temp);
-	evalpopulation = [population, p];
+	evalpopulation = [population,p];
 end
