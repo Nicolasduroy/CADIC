@@ -18,9 +18,12 @@ M = 1 + (bm>2); % 1 for bm 1 and 2; 2 for ZDT functions
 lb = (-5+5*(bm>2))*ones(1,V); % -5 for bm 1 and 2; 0 for ZDT functions
 ub = (5-4*(bm>2))*ones(1,V); % 5 for bm 1 and 2; 1 for ZDT functions
 
-% for i = 1:1
-%     res1= myGA(@(x) benchmark(bm,x),V,M,lb,ub,50,25,25,0.5,10);
-% end
+for i = 1:1
+    profile on
+    res1= myGA(@(x) benchmark(bm,x),V,M,lb,ub,50,25,25,0.5,10,0.7);
+    profile off
+    profile viewer
+end
 
 % 
 % N = 30:10:200;

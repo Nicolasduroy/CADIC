@@ -36,7 +36,7 @@ function [population,it] = myGA(f,V,M,lb,ub,N,NP,NC,P,eta,PC)
 %%%%%%%%%%%%%%%%%%%%%%%% \\ Proceed with changes below!
 		parents = selectionTournament(population,NP,V,M);	
 
-		offspring = geneticOperators(parents,f,N,NC,P,V,M,lb,ub);
+		offspring = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta,PC);
 
 		population = [ population(:,1:V+M) ; offspring(:,1:V+M) ]; % vertical on eachother 
 
