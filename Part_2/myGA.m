@@ -16,6 +16,8 @@ function [population,it] = myGA(f,V,M,lb,ub,N,NP,NC,P,eta,PC)
     q = [];
     gem = [];
     crowdis = [];
+    qnew=10;
+    
 	%% GENETIC ALGORITHM
 
 	% Generation of the intial population
@@ -23,7 +25,7 @@ function [population,it] = myGA(f,V,M,lb,ub,N,NP,NC,P,eta,PC)
 
 	population = evaluatePopulation(population,f,N,V,M,lb,ub); %10*3
 
-	population = sortPopulation(population,V,M);
+	population = sortPopulation(population,V,M,qnew);
 
 	% Main loop
 	
@@ -32,16 +34,13 @@ function [population,it] = myGA(f,V,M,lb,ub,N,NP,NC,P,eta,PC)
 	runFlag = true;
 	while runFlag
 %%%%%%%%%%%%%%%%%%%%%%%% \\ Proceed with changes below!
-     
 		parents = selectionTournament(population,NP,V,M);	
-        
-        eta = 5;
 
-		offspring = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta,PC);
+		offspring = geneticOperators(parents,f,N,NC,P,V,M,lb,ub);
 
 		population = [ population(:,1:V+M) ; offspring(:,1:V+M) ]; % vertical on eachother 
 
-		population = sortPopulation(population,V,M);
+		population = sortPopulation(population,V,M,qnew);
 
 		population = cropPopulation(population,N);
 
@@ -63,14 +62,14 @@ function [population,it] = myGA(f,V,M,lb,ub,N,NP,NC,P,eta,PC)
                     max_prev = 0;
                 end 
             end 
-            A_old = abs(fitness) + 15/100*abs(fitness);
+            A_old = fitness + 15;
         end 
 		[runFlag,A,qnew,m,crowd,max_crowd] = stopCriterion(population,V,M,A_old,it,max_prev);
 
-        q = [q qnew];
+        %q = [q qnew];
         A_old = [A_old A];
-        gem = [gem m];
-        crowdis = [crowdis crowd];
+        %gem = [gem m];
+        %crowdis = [crowdis crowd];
         max_prev = max_crowd;
     
         

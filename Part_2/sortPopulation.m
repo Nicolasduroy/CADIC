@@ -1,4 +1,7 @@
-function sorted = sortPopulation(unsorted,V,M)
+
+function sorted = sortPopulation(unsorted,V,M,no_same)
+
+
 
 if (M==1) % Single Objective   %  so we crop the useless ones
 	%sorted = sort(unsorted);
@@ -84,6 +87,7 @@ else % Multi-objective case : non-domination sorting
         end
         front = nextfront;
     end
+
     %% Crowding Distance
 	
 % only compare each of same rank 
@@ -117,6 +121,7 @@ else % Multi-objective case : non-domination sorting
             break;
         end
      end 
+
      for m = 1:M
         unsortedrank = objectives(rankindices,m);
         [~, indexsort] = sort(unsortedrank);
@@ -131,8 +136,8 @@ else % Multi-objective case : non-domination sorting
             distance(rankindices(r)) = distance(rankindices(r))+dist; 
         end
      end
-     
  end
+
  totrankindices = zeros(N,1);
  ind_totrank = 1;
  l=1;
@@ -152,8 +157,42 @@ else % Multi-objective case : non-domination sorting
     totrankindices(ind_totrank:ind_totrank+ranknum(y)-1) = rankindices;
     ind_totrank = ind_totrank + ranknum(y);
  end
+
+
+if no_same < 0.3
+     check = [];
+     for i =  1:size(objectives,1) % direct weg of in begin goede houden
+     
+        for j=1:1:size(objectives,1)
+            if i>j
+                same = 0;
+                for q = 1:M
+               
+                    if objectives(i,q) == objectives(j,q)
+                        same = same + 1;
+                    if same == M
+                        for ra = 1:size(totrankindices,2)
+                            if totrankindices(ra) == i
+                                totrankindices(ra) = [];
+                                totrankindices = [totrankindices i];
+    %                     rank(i) = max(rank);
+                          check = [check i];
+                            end
+                        end 
+                    end
+                   end
+                end
+            end 
+        end
+     end 
+end 
+        
+
+
  unsorted = cat(2,unsorted,rank);
  unsorted = cat(2,unsorted,distance);
  sorted = unsorted(totrankindices,:);
+
 end
+
 end

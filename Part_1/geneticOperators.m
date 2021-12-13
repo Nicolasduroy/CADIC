@@ -18,7 +18,7 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta)
 %             
             %%% uniform cross over 
             
-             p = randperm(height(parents),2);
+             p = randperm(size(parents,1),2);
              
             for v = 1:V
                 x =rand;
@@ -41,7 +41,7 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta)
             
           
         else
-            l = randperm(height(parents),1);
+            l = randperm(size(parents,1),1);
             children(child,:)= parents(l,(1:V));
             x = rand;
             z = randperm(V,1);   

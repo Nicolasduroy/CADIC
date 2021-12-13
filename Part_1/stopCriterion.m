@@ -99,7 +99,7 @@ function [flag,fitness,q,m,crowdmax,max_crowd] = stopCriterion(population,V,M,fi
 % % a=2;
 %% for minimizing both objectives, take fitness function f(x) = obj(x) + obj2(x)
 fitness = 0;
-for i = 1 : height(population)/2
+for i = 1 : size(population,1)/2
     for m = 1:M 
         fitness = fitness + population(i,V+m);
     end 
@@ -110,7 +110,7 @@ m = mean(abs(fitness_previous-fitness));
 q = mean(abs(fitness_previous-fitness))/fitness;
 
 crowd = 0 ;
-for i = 1 : height(population)
+for i = 1 : size(population,1)
     for m = 1:M 
         if population(i,end) ~= inf
             crowd(i) = population(i,end);

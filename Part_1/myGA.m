@@ -56,7 +56,7 @@ function [population,it] = myGA(f,V,M,lb,ub,N,NP,NC,P,eta)
         %% set first time 
         if it == 2
             fitness = 0;
-            for i = 1 : height(population)
+            for i = 1 : size(population,1)
                 for m = 1:M 
                     fitness = fitness + population(i,V+m);
                     max_prev = 0;
