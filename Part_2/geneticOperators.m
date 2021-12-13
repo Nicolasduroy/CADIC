@@ -1,4 +1,4 @@
-function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta)
+function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta,PC)
 	children = zeros(NC,V);
 	for child = 1:NC/2
 		if rand<P
@@ -17,7 +17,7 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta)
 %            
 %             
             %%% uniform cross over 
-            
+            if rand>PC
              p = randperm(size(parents,1),2);
              
             for v = 1:V
@@ -30,50 +30,30 @@ function children = geneticOperators(parents,f,N,NC,P,V,M,lb,ub,eta)
                     children(child+1,v)= parents(p(1),v);
                 end 
             end
-
+            else
             %Simulated Binary Crossover
-%             p = randperm(height(parents),2);
-%             for v = 1:V
-%                 [c1, c2] = districross(parents(p(1),v),parents(p(2),v),eta);
-%                 children(child,v) = c1;
-%                 children(child+1,v) = c2;
-%             end
-            
+            p = randperm(height(parents),2);
+            for v = 1:V
+                [c1, c2] = districross(parents(p(1),v),parents(p(2),v),eta);
+                children(child,v) = c1;
+                children(child+1,v) = c2;
+            end
+            end
           
         else
             l = randperm(size(parents,1),1);
             children(child,:)= parents(l,(1:V));
             x = rand;
             z = randperm(V,1);   
-            children(child,z) = children(child,z)*(1-(x-1)*0.2);
+            newparam = children(child,z)*(1-(x-0.5)*0.5);
+            if newparam>1 
+                newparam = 1;
+            end
+            children(child,z) = newparam;
+            
 		end
 	end
 	
 	children = evaluatePopulation(children,f,NC,V,M,lb,ub);
 end
 
-% % Do mutation
-%              %S = randperm(V,1);
-%              pareto = parents(:,end-1)~=1;
-%              pareto = sum(pareto);
-%              if ~pareto
-%                 cd_index = parents(:,end)<Inf;
-%                 cds = parents(cd_index,end);
-%                 average = mean(cds);
-%                 stdev = std(cds);
-%                 uncrowdedind = (parents(:,end)-average) > 5*stdev;
-%                 uncrowdedparents = parents(uncrowdedind,:);
-%                 if isempty(uncrowdedparents)
-%                     l = randperm(height(parents),1);
-%                     children(child,:)= parents(l,(1:V));
-%                     x = rand;
-%                     z = randperm(V,1);   
-%                     children(child,z) = children(child,z)*(1-(x-1)*0.2);
-%                 else
-%                     l = randperm(height(uncrowdedparents),1);
-%                     children(child,:)= uncrowdedparents(l,(1:V));
-%                     x = rand;
-%                     z = randperm(V,1);   
-%                     children(child,z) = children(child,z)*(1-(x-1)*0.2);
-%                 end
-%              else

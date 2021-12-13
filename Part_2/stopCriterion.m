@@ -129,7 +129,7 @@ max_crowd = max(crowd);
 %     crowdmax = abs(max_previous -max(crowd))/max_previous;
 
 
- if q < 0.7 && crowdmax < 5 % 0.07 en 2 
+ if q < 0.07 && crowdmax < 2 % 0.07 en 2 
     flag = 0;
  end 
 
