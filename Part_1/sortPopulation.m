@@ -16,15 +16,15 @@ else % Multi-objective case : non-domination sorting
 	%% check for optimal points : not both objectives can be improved, if one can be improved doesn't matter.
 
     objectives=unsorted(:,(V+1:V+M));
-    rank= zeros(height(objectives),1);
+    rank= zeros(size(objectives,1),1);
     indices = [];
 
-    ndom_k = zeros(height(objectives),1);
-    S_k = cell(height(objectives),1);
-    for k = 1: height(objectives)
+    ndom_k = zeros(size(objectives,1),1);
+    S_k = cell(size(objectives,1),1);
+    for k = 1: size(objectives,1)
         dom_k = [];
         ndom = 0;
-        for j = 1: height(objectives)
+        for j = 1: size(objectives,1)
             if k~=j
                 domin = false;
                 domed = false;
@@ -53,7 +53,7 @@ else % Multi-objective case : non-domination sorting
     end 
     front = [];
     frontcount = 1;
-    for i = 1:height(rank)
+    for i = 1:size(rank,1)
         if rank(i)==frontcount
             front = [front i];
         end
@@ -82,7 +82,7 @@ else % Multi-objective case : non-domination sorting
 % start with looking for max and min for each rank and give them CD =
 % infinity. 
  % compare resting elements and give them a value based on.
-  N = height(objectives);
+  N = size(objectives,1);
  distance = zeros(N,1);
  ranks = max(rank);
  l=1;

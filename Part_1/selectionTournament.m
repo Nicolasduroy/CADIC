@@ -11,14 +11,14 @@ indexes=[];
 objectives = population(:,V+1:end);
 for i = 1:NP
     
- p = randperm(height(objectives),2);
+ p = randperm(size(objectives,1),2);
  r1 = p(1);
  r2 = p(2);  
  while objectives(r1,1)== 0
-     r1 = randperm(height(objectives),1);
+     r1 = randperm(size(objectives,1),1);
  end 
  while objectives(r2,1)== 0
-     r2 = randperm(height(objectives),1);
+     r2 = randperm(size(objectives,1),1);
  end 
  
   rank_obj1 = objectives(r1,1);
